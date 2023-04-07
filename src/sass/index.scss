@@ -1,2 +1,23 @@
 @import './common';
-@import './example';
+// @import './example';
+
+// base
+@import './base/reset';
+
+// utils
+@import './utils/variables';
+@import './utils/container';
+@import './utils/visually-hidden';
+
+// components
+@import './components/card-modal';
+@import './components/filter';
+@import './components/pages-numbers-wrapper';
+@import './components/slider';
+@import './components/spinner';
+@import './components/main';
+@import './components/header';
+@import './components/footer';
+@import './components/card-markup';
+@import './components/button-nav';
+
