@@ -1,0 +1,1 @@
+{"mappings":"AAAoBA,SAASC,cAAc","sources":["src/js/main.js"],"sourcesContent":["const textContent = document.querySelector('.title');\n"],"names":["document","querySelector"],"version":3,"file":"index.b6a35465.js.map"}
