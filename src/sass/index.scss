@@ -7,6 +7,7 @@
 // utils
 @import './utils/variables';
 @import './utils/container';
+@import './utils/card-set';
 @import './utils/visually-hidden';
 
 // components
@@ -15,8 +16,8 @@
 @import './components/pages-numbers-wrapper';
 @import './components/slider';
 @import './components/spinner';
-@import './components/main';
-@import './components/header';
+@import './components/main-home';
+// @import './components/header';
 @import './components/footer';
 @import './components/card-markup';
 @import './components/button-nav';
