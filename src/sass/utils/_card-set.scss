@@ -1,0 +1,30 @@
+.card-set {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
+
+  &__item {
+    flex-basis: 100%;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc(
+      (100% - 32px) / 2
+    );
+    }
+
+    @media screen and (min-width: 1280px) {
+      flex-basis: calc(
+      (100% - 2 * 16px) / 3
+    );
+    }
+}
+  }
+
