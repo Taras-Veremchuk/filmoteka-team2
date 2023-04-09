@@ -22,6 +22,7 @@ async function onSearchFormSubmit(e) {
     Notiflix.Notify.info('Please write something');
     return;
   }
+
   exemplarFilms.resetPage();
   try {
     const data = await exemplarFilms.searchMovies();
@@ -33,14 +34,8 @@ async function onSearchFormSubmit(e) {
     }
     refs.cardSetEl.innerHTML = '';
     Notiflix.Notify.success(`Hooray! We found ${data.total_results} films.`);
+    
     renderMovies(data);
-    // PAGINATION
-    pagination.setTotalItems(Math.ceil(data.total_results / 20));
-    pagination.movePageTo(1);
-  } catch (err) {
-    console.log;
-  }
-}
 
 // PAGINATION
 pagination.on('beforeMove', async ({ page }) => {
@@ -53,4 +48,16 @@ pagination.on('beforeMove', async ({ page }) => {
     console.log;
   }
 });
+    // PAGINATION
+    pagination.setTotalItems(Math.ceil(data.total_results / 20));
+    pagination.movePageTo(1);
+    // PAGINATION
+
+  } catch (err) {
+    console.log;
+  }
+
+}
+
+
 // pagination.on('afterMove', ({ page }) => console.log(page));
