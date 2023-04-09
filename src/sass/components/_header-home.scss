@@ -21,6 +21,10 @@
 }
 .header-container {
   padding-top: 20px;
+
+  @media screen and(min-width: 768px) {
+    padding-top: 32px;
+  }
 }
 .header-back {
   display: flex;
@@ -53,10 +57,30 @@
     border-radius: 15px;
     padding: 16px;
   }
+  @media screen and (min-width: 1280px) {
+    min-width: 1216;
+    min-height: 222px;
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('/src/images/header-tablet.jpg');
+    border-radius: 15px;
+    padding: 16px;
+  }
 }
 .header-relay {
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 .navigation {
 }
@@ -75,7 +99,7 @@
   color: white;
   width: 87px;
   height: 34px;
-  //   padding: 10px 26px;
+  padding: 10px 26px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -88,6 +112,12 @@
   text-decoration: none;
   text-transform: uppercase;
   border: none;
+
+  @media screen and (min-width: 768px) {
+    width: 83px;
+    height: 38px;
+    padding: 12px 24px;
+  }
 }
 .nav__link-home:hover,
 :focus {
@@ -120,6 +150,12 @@
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 100px;
+
+  @media screen and (min-width: 768px) {
+    width: 109px;
+    height: 38px;
+    // padding: 12px 20px;
+  }
 }
 .nav__link-library:hover,
 :focus {
@@ -134,16 +170,27 @@
   justify-content: space-between;
   background-color: #fff;
   border-radius: 50px;
+
+  @media screen and(min-width: 768px) {
+    margin-top: 0;
+    width: 165px;
+    height: 38px;
+  }
 }
 .search-input {
   height: 34px;
   background-color: white;
   color: black;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
   padding-left: 14px;
   outline: none;
   border: none;
+
+  @media screen and (min-width: 768px) {
+    max-width: 136px;
+    height: 38px;
+  }
 }
 .search-form__btn {
   background-color: #fff;
@@ -152,8 +199,8 @@
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
   border: none;
 }
 .search-form__icon {
@@ -164,12 +211,22 @@
   stroke: currentColor;
   stroke: #000;
   fill: white;
+
+  @media screen and (min-width: 768px) {
+    width: 16px;
+    height: 16px;
+  }
 }
 .header-botoom {
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: revert;
+  }
 }
+
 .logo-header {
   // margin: 0 auto;
   cursor: pointer;
