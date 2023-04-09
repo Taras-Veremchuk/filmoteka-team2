@@ -19,13 +19,17 @@ export default class FilmRestAPI {
     });
     const BASE_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&${searchParams}`;
 
+    if (!localStorage.getItem('MOVIE_GENRES')) {
+      this.getGenres();
+    }
+
     try {
       const response = await fetch(BASE_URL);
       const data = await response.json();
 
       this.incrementPage();
 
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       console.error(error);
@@ -40,6 +44,10 @@ export default class FilmRestAPI {
     });
 
     const BASE_URL = ` https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&${searchParams}`;
+
+    if (!localStorage.getItem('MOVIE_GENRES')) {
+      this.getGenres();
+    }
 
     try {
       const response = await fetch(BASE_URL);
@@ -59,6 +67,10 @@ export default class FilmRestAPI {
     try {
       const response = await fetch(BASE_URL);
       const data = await response.json();
+
+      const parsedGenres = {};
+      data.genres.forEach(({ id, name }) => (parsedGenres[id] = name));
+      localStorage.setItem('MOVIE_GENRES', JSON.stringify(parsedGenres));
 
       console.log(data);
       return data;
