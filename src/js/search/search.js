@@ -38,7 +38,6 @@ async function onSearchFormSubmit(e) {
     console.log;
   }
 }
-
 function renderMovies(movies) {
   //   console.log(movies.results);
   const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
