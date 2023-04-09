@@ -1,6 +1,7 @@
 import FilmRestAPI from '../restAPI/restAPI';
 import Notiflix from 'notiflix';
-
+import { renderMovies } from '../render-cards';
+import { pagination } from '../pagination-home/pagination-home';
 const exemplarFilms = new FilmRestAPI();
 
 const refs = {
@@ -31,34 +32,27 @@ async function onSearchFormSubmit(e) {
       return;
     }
     refs.cardSetEl.innerHTML = '';
-    console.log(data);
     Notiflix.Notify.success(`Hooray! We found ${data.total_results} films.`);
     renderMovies(data);
+    // PAGINATION
+    pagination.setTotalItems(Math.ceil(data.total_results / 20));
+    pagination.movePageTo(1);
   } catch (err) {
     console.log;
   }
 }
-function renderMovies(movies) {
-  //   console.log(movies.results);
-  const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
-  const markup = movies.results
-    .map(movie => {
-      const {
-        poster_path: posterPath,
-        title,
-        genre_ids: genreIds,
-        release_date: releseDate,
-      } = movie;
-      return `<li class="card-set__item movie-card"><a href="#!" class="movie-card__link"><div class="movie-card__holder"><img src=${
-        IMG_BASE + posterPath
-      } alt="${title} poster" class="movie-card__img" width="100%"></div><p class="movie-card__title">${title}
-            </p><p class="movie-card__genre">${
-              genreIds.length < 3 ? genreIds : genreIds.slice(0, 2) + ', Other'
-            } |
-                <span class="movie-card__date">${releseDate.slice(0, 4)}</span>
-            </p></a></li>`;
-    })
-    .join('');
 
-  refs.cardSetEl.insertAdjacentHTML('beforeend', markup);
-}
+// PAGINATION
+pagination.on('beforeMove', async ({ page }) => {
+  console.log(page);
+  try {
+    exemplarFilms.page = page;
+    console.log(exemplarFilms.searchQuery);
+    const data = await exemplarFilms.searchMovies();
+    console.log(data);
+    renderMovies(data);
+  } catch (err) {
+    console.log;
+  }
+});
+// pagination.on('afterMove', ({ page }) => console.log(page));
