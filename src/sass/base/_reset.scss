@@ -1,11 +1,13 @@
-// body {
-//   background-position: center;
+body {
+  background-position: center;
 
-//   background-color: ;
-//   color:
-//   font-family:
+  background-color: #f3ebeb;
+  color: font-family;
 
-// }
+  &.dark {
+    background-color: rgb(50, 49, 49);
+  }
+}
 
 /* reset styles */
 h1,
