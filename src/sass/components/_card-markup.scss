@@ -40,7 +40,8 @@ line-height: 1.33;
   }
 
   &__img {
-    object-fit: cover;
+    object-fit: fill;
+    height: 100%;
   }
 
   &__title{
