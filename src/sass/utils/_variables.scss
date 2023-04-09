@@ -1,14 +1,31 @@
-// :root {
-//   // breakpoints
+:root {
+// //   breakpoints
 //   --mobile: 320px;
 //   --tablet: 768px;
-//   --desktop: 1200px;
+//   --desktop: 1280px;
 
-//   // text colors
+// //   text colors
 //   --main-text-color:
 //   --secondary-text-color:
 //   --btn-text-color:
 
-//   //btn bgc
+// //   btn bgc
 //   --btn-hover-color:
-// }
+
+/* flex */
+--flex-gap: 20px;
+--flex-quantity: 1;
+
+@media screen and (min-width: 768px) {
+--flex-gap: 32px;
+--flex-quantity: 2;
+  }
+
+@media screen and (min-width: 1280px) {
+    --flex-gap: 16px;
+    --flex-quantity: 3;
+      }
+
+
+
+}

@@ -15,7 +15,7 @@ function renderMovies(movies) {
         genre_ids: genreIds,
         release_date: releseDate,
       } = movie;
-      return `<li class="card-set__item movie-card"><a href="#!" class="movie-card__link"><div class="movie-card__holder"><img src=${
+      return `<li class="card-set__item movie-card"><a href="" class="movie-card__link"><div class="movie-card__holder"><img src=${
         IMG_BASE + posterPath
       } alt="${title} poster" class="movie-card__img" width="100%"></div><p class="movie-card__title">${title}            
             </p><p class="movie-card__genre">${
@@ -27,7 +27,7 @@ function renderMovies(movies) {
     .join('');
 
   cardSetEl.insertAdjacentHTML('beforeend', markup);
+  
 }
-
 
 
