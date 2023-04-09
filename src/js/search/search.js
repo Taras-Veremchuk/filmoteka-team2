@@ -47,9 +47,7 @@ pagination.on('beforeMove', async ({ page }) => {
   console.log(page);
   try {
     exemplarFilms.page = page;
-    console.log(exemplarFilms.searchQuery);
     const data = await exemplarFilms.searchMovies();
-    console.log(data);
     renderMovies(data);
   } catch (err) {
     console.log;

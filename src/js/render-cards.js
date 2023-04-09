@@ -1,11 +1,18 @@
 import FilmRestAPI from './restAPI/restAPI';
 import defaultPoster from '../images/default-poster.jpg';
+import { pagination } from './pagination-home/pagination-home';
 const cardSetEl = document.querySelector('.card-set');
 
 new FilmRestAPI()
   .fetchMovies()
-  .then(renderMovies)
+  .then(foo)
   .catch(err => console.log('Error: ', err));
+
+function foo(data) {
+  renderMovies(data);
+  // pagination.setTotalItems(Math.ceil(data.total_results / 20));
+  // pagination.movePageTo(1);
+}
 
 export function renderMovies(movies) {
   //   console.log(movies.results);
@@ -40,6 +47,21 @@ export function renderMovies(movies) {
     .querySelectorAll('.movie-card__link')
     .forEach(element => element.addEventListener('click', onClick));
 }
+
+// PAGINATION
+// pagination.on('beforeMove', async ({ page }) => {
+//   console.log(page);
+//   try {
+//     exemplarFilms.page = page;
+//     // console.log(exemplarFilms.searchQuery);
+//     const data = await exemplarFilms.foo();
+//     // console.log(data);
+//     renderMovies(data);
+//   } catch (err) {
+//     console.log;
+//   }
+// });
+// PAGINATION
 
 function onClick(evt) {
   evt.preventDefault();
