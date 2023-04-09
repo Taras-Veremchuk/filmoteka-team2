@@ -22,16 +22,18 @@ export function renderMovies(movies) {
       const movieGenres = genreIds.map(genre => genresList[genre]);
       return `<li class="card-set__item movie-card"><a href="" class="movie-card__link"><div class="movie-card__holder"><img src=${
         posterPath ? IMG_BASE + posterPath : defaultPoster
-      } alt="${title} poster" class="movie-card__img" width="100%"></div><p class="movie-card__title">${title}            
+      } alt="${title} poster" class="movie-card__img" width="100%"></div><p class="movie-card__title">${title}
             </p><p class="movie-card__genre">${
-                movieGenres.length < 3 ? movieGenres.join(', ') : movieGenres.slice(0, 2).join(', ') + ', Other'
-            } | 
+              movieGenres.length < 3
+                ? movieGenres.join(', ')
+                : movieGenres.slice(0, 2).join(', ') + ', Other'
+            } |
                 <span class="movie-card__date">${releseDate.slice(0, 4)}</span>
             </p></a></li>`;
     })
     .join('');
 
-  cardSetEl.insertAdjacentHTML('beforeend', markup);
+  cardSetEl.innerHTML = markup;
 
   //   const links = cardSetEl.querySelectorAll('.movie-card__link');
   cardSetEl
