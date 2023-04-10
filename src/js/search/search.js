@@ -1,15 +1,11 @@
 import FilmRestAPI from '../restAPI/restAPI';
+import Pagination from 'tui-pagination';
+import { refs } from '../refs/refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from '../render-cards';
-import { pagination } from '../pagination-home/pagination-home';
-const exemplarFilms = new FilmRestAPI();
+import { options } from '../pagination-home/pagination-home';
 
-const refs = {
-  searchForm: document.querySelector('.search-form'),
-  galleryContainer: document.querySelector('.gallery'),
-  loadeMoreBtn: document.querySelector('button[type="submit"]'),
-  cardSetEl: document.querySelector('.card-set'),
-};
+const exemplarFilms = new FilmRestAPI();
 
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
@@ -22,6 +18,7 @@ async function onSearchFormSubmit(e) {
     Notiflix.Notify.info('Please write something');
     return;
   }
+
   exemplarFilms.resetPage();
   try {
     const data = await exemplarFilms.searchMovies();
@@ -33,24 +30,30 @@ async function onSearchFormSubmit(e) {
     }
     refs.cardSetEl.innerHTML = '';
     Notiflix.Notify.success(`Hooray! We found ${data.total_results} films.`);
+    
     renderMovies(data);
+
+const pagination = new Pagination('pagination', options)
     // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
     pagination.movePageTo(1);
-  } catch (err) {
-    console.log;
-  }
-}
-
-// PAGINATION
+    
 pagination.on('beforeMove', async ({ page }) => {
-  console.log(page);
+  // console.log(page);
   try {
     exemplarFilms.page = page;
     const data = await exemplarFilms.searchMovies();
     renderMovies(data);
   } catch (err) {
-    console.log;
+    console.error;
   }
 });
+// PAGINATION
+  } catch (err) {
+    console.error;
+  }
+
+}
+
+
 // pagination.on('afterMove', ({ page }) => console.log(page));
