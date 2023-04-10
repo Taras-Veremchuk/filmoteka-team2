@@ -1,28 +1,6 @@
 import defaultPoster from '../images/default-poster.jpg';
 import { refs } from './refs/refs';
 
-fetchedData
-  .fetchMovies()
-  .then(data => {
-    renderMovies(data);
-
-    // PAGINATION
-    pagination.setTotalItems(Math.ceil(data.total_results / 20));
-    pagination.movePageTo(1);
-    pagination.on('beforeMove', async ({ page }) => {
-      try {
-        // console.log('Denys');
-        fetchedData.page = page;
-        const data = await fetchedData.fetchMovies();
-        renderMovies(data);
-      } catch (err) {
-        console.error;
-      }
-    });
-    // PAGINATION
-  })
-  .catch(err => console.log('Error: ', err));
-
 export function renderMovies(movies) {
   const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
   const genresList = JSON.parse(localStorage.getItem('MOVIE_GENRES'));
