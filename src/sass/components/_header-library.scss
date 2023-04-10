@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 .header {
   display: block;
 }
@@ -63,14 +63,10 @@
     display: flex;
   }
 }
-.navigation {
-}
 .navigation__list {
   //   padding-top: 14px;
   list-style: none;
   display: flex;
-}
-.nav__item {
 }
 .nav__link-home {
   //   margin-top: 14px;
@@ -99,8 +95,6 @@
 :focus {
   color: white;
   background-color: black;
-}
-.nav-item {
 }
 .nav__link-library {
   //   margin-top: 14px;
@@ -202,9 +196,7 @@
   color: white;
   margin-left: 8px;
 }
-
 //  LLLLLLIIIIIBBBRRRRRRRAAAAAARRRRRYYYYYYYYY
-
 .btn-watched {
   //   padding: 10px 23px;
   width: 102px;
@@ -253,67 +245,18 @@
     //   padding: 14px 24px;
   }
 }
-
-=======
 .tab__desk-btn {
   margin-left: auto;
   @media screen and (max-width: 767px) {
     display: none;
   }
 }
->>>>>>> Stashed changes
 .btn-library {
   margin-top: 16px;
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
-<<<<<<< Updated upstream
-// .header-container {
-//   padding-top: 20px;
-//   content: '';
-//   position: relative;
-// }
-.library-list {
-  flex-direction: column-reverse;
-  align-items: center;
-  display: flex;
-}
-// .header__btn-top {
-
-// }
-.btn-top {
-  margin-left: auto;
-}
-.tab__desk-btn {
-  margin-left: auto;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-.btn-top {
-  width: 86px;
-  height: 34px;
-  border-radius: 100px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: calc(14 / 12);
-  text-transform: uppercase;
-  cursor: pointer;
-  color: red;
-  background: white;
-  border: none;
-
-  @media screen and (min-width: 768px) {
-    //   padding: 12px 24px;
-    height: 38px;
-  }
-  @media screen and (min-width: 1280px) {
-    height: 42px;
-    //   padding: 14px 24px;
-  }
-}
-=======
 .btn-top {
   margin-left: 4px;
   background-color: var(--btn-text-color);
@@ -401,4 +344,3 @@
   width: 86px;
   height: 34px;
 }
->>>>>>> Stashed changes
