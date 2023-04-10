@@ -1,0 +1,46 @@
+.theme__div {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.theme {
+  position: relative;
+  width: 60px;
+  height: 20px;
+  background-color: #7d7878;
+  border-radius: 30px;
+  margin: 0;
+  padding: 0;
+
+  &.active {
+    background-color: #d8d2d2;
+  }
+}
+
+.theme__switch {
+  position: absolute;
+  display: flex;
+  border: none;
+
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #262626;
+  width: 20px;
+  height: 20px;
+  box-shadow: 2px 0px 2px #3d3c3a;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: unset;
+    transition: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &.active {
+    background-color: #ed8b14;
+    left: unset;
+    right: 0;
+    box-shadow: -2px 0px 2px #3d3c3a;
+  }
+}
