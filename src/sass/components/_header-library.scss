@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .header {
   display: block;
 }
@@ -253,12 +254,21 @@
   }
 }
 
+=======
+.tab__desk-btn {
+  margin-left: auto;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+>>>>>>> Stashed changes
 .btn-library {
   margin-top: 16px;
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
+<<<<<<< Updated upstream
 // .header-container {
 //   padding-top: 20px;
 //   content: '';
@@ -303,3 +313,92 @@
     //   padding: 14px 24px;
   }
 }
+=======
+.btn-top {
+  margin-left: 4px;
+  background-color: var(--btn-text-color);
+  color: var(--secondary-text-color);
+  width: 113px;
+  height: 34px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  border: none;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 50;
+
+  @media screen and (min-width: 768px) {
+    width: 96px;
+    height: 38px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 8px;
+    width: 117px;
+    height: 42px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--btn-text-color);
+    background-color: var(--secondary-text-color);
+  }
+}
+.btn-top-queue {
+  @media screen and (min-width: 1280px) {
+    width: 86px;
+    height: 42px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 86px;
+    height: 38px;
+  }
+}
+.btn-top-watched {
+  @media screen and (min-width: 1280px) {
+    width: 120px;
+    height: 42px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 102px;
+    height: 38px;
+  }
+}
+.active-library {
+  background-color: var(--main-text-color);
+  color: var(--btn-text-color);
+}
+.not-active {
+  color: var(--main-text-color);
+  background-color: var(--btn-text-color);
+}
+.btn__library-bottom {
+  background-color: var(--btn-text-color);
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  border: none;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-text-color);
+    color: var(--btn-text-color);
+  }
+}
+.btn__watched-bot {
+  width: 102px;
+  height: 34px;
+}
+.btn__queue-bot {
+  width: 86px;
+  height: 34px;
+}
+>>>>>>> Stashed changes
