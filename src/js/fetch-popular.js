@@ -7,7 +7,6 @@ const fetchedData = new FilmRestAPI();
 fetchedData
   .fetchMovies()
   .then(data => {
-    console.log(data);
     renderMovies(data);
 
     // PAGINATION
