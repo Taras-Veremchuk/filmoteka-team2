@@ -1,20 +1,22 @@
 .theme__div {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 20px;
+  margin-left: auto;
 }
 .theme {
   position: relative;
   width: 60px;
   height: 20px;
-  background-color: #7d7878;
+  background-color: var(--theme-dark-div-btn-color);
   border-radius: 30px;
   margin: 0;
   padding: 0;
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
 
   &.active {
-    background-color: #d8d2d2;
+    background-color: var(--theme-light-div-btn-color);
+    transition-duration: 0.7s;
   }
 }
 
@@ -25,22 +27,51 @@
 
   border-radius: 100px;
   cursor: pointer;
-  background-color: #262626;
+  background-color: var(--theme-dark-tbn-color);
   width: 20px;
   height: 20px;
-  box-shadow: 2px 0px 2px #3d3c3a;
+  box-shadow: 2px 0px 2px var(--theme-btn-shadow-right);
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
+
   &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: unset;
-    transition: cubic-bezier(0.23, 1, 0.32, 1);
   }
+
   &.active {
-    background-color: #ed8b14;
-    left: unset;
-    right: 0;
-    box-shadow: -2px 0px 2px #3d3c3a;
+    background-color: var(--theme-light-btn-color);
+    box-shadow: -2px 0px 2px var(--theme-btn-shadow-left);
+    transform: translateX(200%);
+    transition-duration: 0.5s;
+  }
+}
+
+// -------oders classes
+body {
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
+  &.dark {
+    background-color: var(--theme-dark-background-color);
+    color: var(--theme-dark-text-color);
+    transition-duration: 0.5s;
+  }
+}
+.movie-card__title,
+.movie-card__genre {
+  &.active {
+    color: var(--theme-dark-text-color);
+  }
+}
+
+.footer {
+  &.active {
+    background-color: var(--theme-dark-background-footer-color);
+
+    .footer__text,
+    .footer__link {
+      color: var(--theme-dark-text-color);
+    }
   }
 }

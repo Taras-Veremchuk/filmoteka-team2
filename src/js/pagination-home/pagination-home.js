@@ -28,5 +28,5 @@ export const options = {
       '</a>',
   },
 };
+
 export const pagination = new Pagination('pagination', options);
-// export const vagination = new Pagination('pagination', options);
