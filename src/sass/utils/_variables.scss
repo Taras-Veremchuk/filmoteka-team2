@@ -1,36 +1,43 @@
 :root {
+  //   // breakpoints
+  //   --mobile: 320px;
+  //   --tablet: 768px;
+  //   --desktop: 1280px;
 
-//   // breakpoints
-//   --mobile: 320px;
-//   --tablet: 768px;
-//   --desktop: 1280px;
+  /* flex */
+  --flex-gap: 20px;
+  --flex-quantity: 1;
 
-
-/* flex */
---flex-gap: 20px;
---flex-quantity: 1;
-
-@media screen and (min-width: 768px) {
---flex-gap: 32px;
---flex-quantity: 2;
+  @media screen and (min-width: 768px) {
+    --flex-gap: 32px;
+    --flex-quantity: 2;
   }
 
-@media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     --flex-gap: 16px;
     --flex-quantity: 3;
-      }
+  }
 
+  //header
+  $header-background-color: #f0f0f0;
+  //text colors
+  $main-text-color: #000000;
+  $secondary-text-color: #b92f2c;
+  $btn-text-color: #ffffff;
+  //btn bgc
+  $btn-hover-color: #000000;
+  //footer
+  $footer-text-color: #545454;
+  $footer-background-color: #f7f7f7;
 
-//header
---header-background-color: #F0F0F0;
-//text colors
---main-text-color: #000000;
---secondary-text-color: #B92F2C; 
---btn-text-color: #FFFFFF;
-//btn bgc
---btn-hover-color: #000000;
-//footer
---footer-text-color: #545454;
---footer-background-color: #F7F7F7;
-
+  // -----------------theme
+  --theme-dark-background-color: #323131;
+  --theme-dark-background-footer-color: #292929;
+  --theme-dark-text-color: #f7f7f7;
+  --theme-dark-div-btn-color: #7d7878;
+  --theme-dark-tbn-color: #262626;
+  --theme-light-btn-color: #ed8b14;
+  --theme-btn-shadow-left: #3d3c3a;
+  --theme-btn-shadow-right: #ed8b14;
+  --theme-light-div-btn-color: #d8d2d2;
 }
