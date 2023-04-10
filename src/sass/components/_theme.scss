@@ -12,9 +12,11 @@
   border-radius: 30px;
   margin: 0;
   padding: 0;
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
 
   &.active {
     background-color: var(--theme-light-div-btn-color);
+    transition-duration: 0.7s;
   }
 }
 
@@ -28,7 +30,7 @@
   background-color: var(--theme-dark-tbn-color);
   width: 20px;
   height: 20px;
-  box-shadow: 2px 0px 2px var(--theme-btn-shadow);
+  box-shadow: 2px 0px 2px var(--theme-btn-shadow-right);
   transition: transform 0.3s ease-out, background-color 0.2s ease-in;
 
   &::after {
@@ -41,16 +43,19 @@
 
   &.active {
     background-color: var(--theme-light-btn-color);
-    box-shadow: -2px 0px 2px var(--theme-btn-shadow);
+    box-shadow: -2px 0px 2px var(--theme-btn-shadow-left);
     transform: translateX(200%);
     transition-duration: 0.5s;
   }
 }
 
 // -------oders classes
-.footer {
-  &.active {
-    background-color: var(--theme-dark-background-footer-color);
+body {
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
+  &.dark {
+    background-color: var(--theme-dark-background-color);
+    color: var(--theme-dark-text-color);
+    transition-duration: 0.5s;
   }
 }
 .movie-card__title,
@@ -59,3 +64,14 @@
     color: var(--theme-dark-text-color);
   }
 }
+.footer {
+  &.active {
+    background-color: var(--theme-dark-background-footer-color);
+  }
+}
+.active .footer__text {
+  color: white;
+}
+// clases to change color
+
+// footer__first-text-box active

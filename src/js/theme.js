@@ -18,3 +18,9 @@ themeSwitch.addEventListener('click', () => {
     genre.classList.toggle('active');
   });
 });
+const container = document.querySelector('.footer__container');
+const link = document.querySelector('.footer__link');
+
+link.addEventListener('click', () => {
+  container.classList.add('active');
+});
