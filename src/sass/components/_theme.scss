@@ -29,26 +29,28 @@
   width: 20px;
   height: 20px;
   box-shadow: 2px 0px 2px var(--theme-btn-shadow);
+  transition: transform 0.3s ease-out, background-color 0.2s ease-in;
+
   &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: unset;
-    transition: cubic-bezier(0.23, 1, 0.32, 1);
   }
+
   &.active {
     background-color: var(--theme-light-btn-color);
-    left: unset;
-    right: 0;
     box-shadow: -2px 0px 2px var(--theme-btn-shadow);
+    transform: translateX(200%);
+    transition-duration: 0.5s;
   }
 }
 
 // -------oders classes
 .footer {
   &.active {
-    background-color: var(--theme-dark-background-color);
+    background-color: var(--theme-dark-background-footer-color);
   }
 }
 .movie-card__title,
