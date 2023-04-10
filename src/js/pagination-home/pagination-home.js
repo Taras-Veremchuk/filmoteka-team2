@@ -4,10 +4,10 @@ import 'tui-pagination/dist/tui-pagination.css';
 const container = document.getElementById('pagination');
 export const options = {
   // totalItems: 10,
-  itemsPerPage: 20,
+  itemsPerPage: 1,
   visiblePages: 5,
   page: 1,
-  centerAlign: true,
+  centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
   template: {
