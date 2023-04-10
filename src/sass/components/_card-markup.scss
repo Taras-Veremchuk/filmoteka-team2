@@ -49,7 +49,7 @@ text-transform: uppercase;
 }
 
   &__genre {   
-    color: #B92F2C;    
+    color: var(--secondary-text-color);    
   }
 
 //   &__date {
