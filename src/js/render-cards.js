@@ -1,37 +1,5 @@
-import FilmRestAPI from './restAPI/restAPI';
 import defaultPoster from '../images/default-poster.jpg';
-import { pagination } from './pagination-home/pagination-home';
-
-// const cardSetEl = document.querySelector('.card-set');
-const fetchedData = new FilmRestAPI();
 import { refs } from './refs/refs';
-
-
-
- 
-fetchedData.fetchMovies()
-  .then(data => {
-    renderMovies(data);
-    
-    // PAGINATION
-pagination.setTotalItems(Math.ceil(data.total_results / 20));
-pagination.movePageTo(1);
- pagination.on('beforeMove', async ({ page }) => {
-    try {
-        // console.log('Denys');
-      fetchedData.page = page;
-    const data = await fetchedData.fetchMovies();
-    renderMovies(data);
-  } catch (err) {
-    console.error;
-  }
-});
-// PAGINATION
-  })
-  .catch(err => console.log('Error: ', err));
-
-  
- 
 
 export function renderMovies(movies) {
   //   console.log(movies.results);
