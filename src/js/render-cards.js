@@ -1,7 +1,8 @@
 import FilmRestAPI from './restAPI/restAPI';
-import defaultPoster from '../images/default-poster.jpg';
+import defaultPoster from '../images/default-poster1.jpg';
 import { pagination } from './pagination-home/pagination-home';
 
+// const cardSetEl = document.querySelector('.card-set');
 const fetchedData = new FilmRestAPI();
 import { refs } from './refs/refs';
 
@@ -9,7 +10,6 @@ fetchedData
   .fetchMovies()
   .then(data => {
     renderMovies(data);
-    // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
     pagination.movePageTo(1);
     pagination.on('beforeMove', async ({ page }) => {
@@ -51,8 +51,12 @@ export function renderMovies(movies) {
     .join('');
 
   refs.cardSetEl.innerHTML = markup;
+
+  //   const links = cardSetEl.querySelectorAll('.movie-card__link');
+  refs.cardSetEl
+    .querySelectorAll('.movie-card__link')
+    .forEach(element => element.addEventListener('click', onClick));
 }
-refs.cardSetEl.addEventListener('click', onClick);
 
 function onClick(evt) {
   evt.preventDefault();
