@@ -1,21 +1,31 @@
 import FilmRestAPI from './restAPI/restAPI';
 import defaultPoster from '../images/default-poster.jpg';
 import { pagination } from './pagination-home/pagination-home';
-const cardSetEl = document.querySelector('.card-set');
 
-new FilmRestAPI()
+const fetchedData = new FilmRestAPI();
+import { refs } from './refs/refs';
+
+fetchedData
   .fetchMovies()
-  .then(foo)
+  .then(data => {
+    renderMovies(data);
+    // PAGINATION
+    pagination.setTotalItems(Math.ceil(data.total_results / 20));
+    pagination.movePageTo(1);
+    pagination.on('beforeMove', async ({ page }) => {
+      try {
+        console.log('Denys');
+        fetchedData.page = page;
+        const data = await fetchedData.fetchMovies();
+        renderMovies(data);
+      } catch (err) {
+        console.log;
+      }
+    });
+  })
   .catch(err => console.log('Error: ', err));
 
-function foo(data) {
-  renderMovies(data);
-  // pagination.setTotalItems(Math.ceil(data.total_results / 20));
-  // pagination.movePageTo(1);
-}
-
 export function renderMovies(movies) {
-  //   console.log(movies.results);
   const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
   const genresList = JSON.parse(localStorage.getItem('MOVIE_GENRES'));
   const markup = movies.results
@@ -40,30 +50,11 @@ export function renderMovies(movies) {
     })
     .join('');
 
-  cardSetEl.innerHTML = markup;
-
-  //   const links = cardSetEl.querySelectorAll('.movie-card__link');
-  cardSetEl
-    .querySelectorAll('.movie-card__link')
-    .forEach(element => element.addEventListener('click', onClick));
+  refs.cardSetEl.innerHTML = markup;
 }
-
-// PAGINATION
-// pagination.on('beforeMove', async ({ page }) => {
-//   console.log(page);
-//   try {
-//     exemplarFilms.page = page;
-//     // console.log(exemplarFilms.searchQuery);
-//     const data = await exemplarFilms.foo();
-//     // console.log(data);
-//     renderMovies(data);
-//   } catch (err) {
-//     console.log;
-//   }
-// });
-// PAGINATION
+refs.cardSetEl.addEventListener('click', onClick);
 
 function onClick(evt) {
   evt.preventDefault();
-  console.log(evt);
+  console.log(evt.target);
 }

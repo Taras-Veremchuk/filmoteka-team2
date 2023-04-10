@@ -29,7 +29,8 @@ export default class FilmRestAPI {
 
       this.incrementPage();
 
-      console.log(data);
+      // console.log(data);
+      console.log('Popular запит');
       return data;
     } catch (error) {
       console.error(error);
@@ -53,7 +54,8 @@ export default class FilmRestAPI {
       const response = await fetch(BASE_URL);
       const data = await response.json();
 
-      console.log(data);
+      // console.log(data);
+      console.log('Search запит');
       return data;
     } catch (error) {
       console.error(error);

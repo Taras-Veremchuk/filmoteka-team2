@@ -15,7 +15,6 @@ refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(e) {
   e.preventDefault();
-
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
   if (!exemplarFilms.searchQuery) {
@@ -37,20 +36,18 @@ async function onSearchFormSubmit(e) {
     // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
     pagination.movePageTo(1);
+    // PAGINATION
+    pagination.on('beforeMove', async ({ page }) => {
+      console.log('Запит');
+      try {
+        exemplarFilms.page = page;
+        const data = await exemplarFilms.searchMovies();
+        renderMovies(data);
+      } catch (err) {
+        console.log;
+      }
+    });
   } catch (err) {
     console.log;
   }
 }
-
-// PAGINATION
-pagination.on('beforeMove', async ({ page }) => {
-  console.log(page);
-  try {
-    exemplarFilms.page = page;
-    const data = await exemplarFilms.searchMovies();
-    renderMovies(data);
-  } catch (err) {
-    console.log;
-  }
-});
-// pagination.on('afterMove', ({ page }) => console.log(page));
