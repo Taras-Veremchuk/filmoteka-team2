@@ -64,14 +64,22 @@ body {
     color: var(--theme-dark-text-color);
   }
 }
+// Змінення кольору тексту в `footer`
+// Змінення кольору тексту в `footer`
 .footer {
   &.active {
     background-color: var(--theme-dark-background-footer-color);
+
+    // Кольори тексту всередині `.footer__container`
+    .footer__text,
+    .footer__link {
+      color: white;
+    }
   }
 }
-.active .footer__text {
-  color: white;
-}
-// clases to change color
 
-// footer__first-text-box active
+.tui-pagination.tui-page-link {
+  &.active {
+    color: white;
+  }
+}
