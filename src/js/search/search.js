@@ -4,12 +4,14 @@ import { refs } from '../refs/refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from '../render-cards';
 import { options } from '../pagination-home/pagination-home';
+
 const exemplarFilms = new FilmRestAPI();
 
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(e) {
   e.preventDefault();
+
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
   if (!exemplarFilms.searchQuery) {
@@ -31,11 +33,13 @@ async function onSearchFormSubmit(e) {
 
     renderMovies(data);
 
-    // PAGINATION
     const pagination = new Pagination('pagination', options);
+    // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
     pagination.movePageTo(1);
+
     pagination.on('beforeMove', async ({ page }) => {
+      // console.log(page);
       try {
         exemplarFilms.page = page;
         const data = await exemplarFilms.searchMovies();
@@ -49,3 +53,5 @@ async function onSearchFormSubmit(e) {
     console.error;
   }
 }
+
+// pagination.on('afterMove', ({ page }) => console.log(page));
