@@ -38,7 +38,7 @@ async function onSearchFormSubmit(e) {
 
 // PAGINATION
 pagination.on('beforeMove', async ({ page }) => {
-  console.log(page);
+  console.log('Запит');
   try {
     exemplarFilms.page = page;
     const data = await exemplarFilms.searchMovies();
