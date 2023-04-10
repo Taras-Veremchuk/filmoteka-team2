@@ -8,7 +8,7 @@ const genreElements = document.querySelectorAll('.movie-card__genre');
 const setTheme = isDark => {
   localStorage.setItem('isDark', isDark);
 };
-
+// -------
 const getTheme = () => {
   return localStorage.getItem('isDark') === 'true';
 };
