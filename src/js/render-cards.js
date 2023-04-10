@@ -1,15 +1,11 @@
-import FilmRestAPI from './restAPI/restAPI';
 import defaultPoster from '../images/default-poster.jpg';
-import { pagination } from './pagination-home/pagination-home';
-
-// const cardSetEl = document.querySelector('.card-set');
-const fetchedData = new FilmRestAPI();
 import { refs } from './refs/refs';
 
 fetchedData
   .fetchMovies()
   .then(data => {
     renderMovies(data);
+
     // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
     pagination.movePageTo(1);
