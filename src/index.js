@@ -6,3 +6,4 @@ import './js/pagination-home/pagination-home';
 // import './js/pagination-library';
 import './js/render-cards';
 import './js/search/search';
+import './js/theme';
