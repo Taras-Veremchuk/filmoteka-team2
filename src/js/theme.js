@@ -5,17 +5,14 @@ const footerContainer = document.querySelector('.footer__container');
 const titleElements = document.querySelectorAll('.movie-card__title');
 const genreElements = document.querySelectorAll('.movie-card__genre');
 
-// Функція для зберігання значення теми в localStorage
 const setTheme = isDark => {
   localStorage.setItem('isDark', isDark);
 };
 
-// Функція для отримання значення теми з localStorage
 const getTheme = () => {
   return localStorage.getItem('isDark') === 'true';
 };
 
-// Перевіряємо, чи збережене значення теми в localStorage
 if (getTheme()) {
   document.body.classList.add('dark');
   theme.classList.add('active');
@@ -42,7 +39,6 @@ if (getTheme()) {
   });
 }
 
-// Додаємо слухач подій
 themeSwitch.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark');
   theme.classList.toggle('active');
@@ -55,6 +51,6 @@ themeSwitch.addEventListener('click', () => {
   genreElements.forEach(genre => {
     genre.classList.toggle('active');
   });
-  // Зберігаємо значення теми в localStorage
+
   setTheme(isDark);
 });
