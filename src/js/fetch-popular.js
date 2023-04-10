@@ -3,26 +3,26 @@ import { renderMovies } from './render-cards';
 import { pagination } from './pagination-home/pagination-home';
 
 const fetchedData = new FilmRestAPI();
- 
-fetchedData.fetchMovies()
+
+fetchedData
+  .fetchMovies()
   .then(data => {
+    console.log(data);
     renderMovies(data);
-    
+
     // PAGINATION
-pagination.setTotalItems(Math.ceil(data.total_results / 20));
-pagination.movePageTo(1);
- pagination.on('beforeMove', async ({ page }) => {
-    try {
+    pagination.setTotalItems(Math.ceil(data.total_results / 20));
+    pagination.movePageTo(1);
+    pagination.on('beforeMove', async ({ page }) => {
+      try {
         // console.log('Denys');
-      fetchedData.page = page;
-    const data = await fetchedData.fetchMovies();
-    renderMovies(data);
-  } catch (err) {
-    console.error;
-  }
-});
-// PAGINATION
+        fetchedData.page = page;
+        const data = await fetchedData.fetchMovies();
+        renderMovies(data);
+      } catch (err) {
+        console.error;
+      }
+    });
+    // PAGINATION
   })
   .catch(err => console.log('Error: ', err));
-
-  
