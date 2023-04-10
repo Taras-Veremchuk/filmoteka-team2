@@ -1,15 +1,9 @@
 import FilmRestAPI from '../restAPI/restAPI';
+import { refs } from '../refs/refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from '../render-cards';
 import { pagination } from '../pagination-home/pagination-home';
 const exemplarFilms = new FilmRestAPI();
-
-const refs = {
-  searchForm: document.querySelector('.search-form'),
-  galleryContainer: document.querySelector('.gallery'),
-  loadeMoreBtn: document.querySelector('button[type="submit"]'),
-  cardSetEl: document.querySelector('.card-set'),
-};
 
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
