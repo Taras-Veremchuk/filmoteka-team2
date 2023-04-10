@@ -2,7 +2,7 @@
 // import 'tui-pagination/dist/tui-pagination.css';
 
 const container = document.getElementById('pagination');
-const options = {
+export const options = {
   // totalItems: 10,
   itemsPerPage: 1,
   visiblePages: 5,
@@ -28,4 +28,6 @@ const options = {
       '</a>',
   },
 };
+
 // export const pagination = new Pagination('pagination', options);
+

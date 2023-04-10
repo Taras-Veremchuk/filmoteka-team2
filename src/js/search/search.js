@@ -1,8 +1,10 @@
 import FilmRestAPI from '../restAPI/restAPI';
+import Pagination from 'tui-pagination';
 import { refs } from '../refs/refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from '../render-cards';
-import { pagination } from '../pagination-home/pagination-home';
+import { options } from '../pagination-home/pagination-home';
+
 const exemplarFilms = new FilmRestAPI();
 
 refs.searchForm.addEventListener('submit', onSearchFormSubmit);
@@ -31,24 +33,24 @@ async function onSearchFormSubmit(e) {
     
     renderMovies(data);
 
-// PAGINATION
+const pagination = new Pagination('pagination', options)
+    // PAGINATION
+    pagination.setTotalItems(Math.ceil(data.total_results / 20));
+    pagination.movePageTo(1);
+    
 pagination.on('beforeMove', async ({ page }) => {
-  console.log('Запит');
+  // console.log(page);
   try {
     exemplarFilms.page = page;
     const data = await exemplarFilms.searchMovies();
     renderMovies(data);
   } catch (err) {
-    console.log;
+    console.error;
   }
 });
-    // PAGINATION
-    pagination.setTotalItems(Math.ceil(data.total_results / 20));
-    pagination.movePageTo(1);
-    // PAGINATION
-
+// PAGINATION
   } catch (err) {
-    console.log;
+    console.error;
   }
 
 }
