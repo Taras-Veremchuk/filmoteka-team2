@@ -19,16 +19,16 @@
   }
 
   //header
-  $header-background-color: #f0f0f0;
+  --header-background-color: #f0f0f0;
   //text colors
-  $main-text-color: #000000;
-  $secondary-text-color: #b92f2c;
-  $btn-text-color: #ffffff;
+  --main-text-color: #000000;
+  --secondary-text-color: #b92f2c;
+  --btn-text-color: #ffffff;
   //btn bgc
-  $btn-hover-color: #000000;
+  --btn-hover-color: #000000;
   //footer
-  $footer-text-color: #545454;
-  $footer-background-color: #f7f7f7;
+  --footer-text-color: #545454;
+  --footer-background-color: #f7f7f7;
 
   // -----------------theme
   --theme-dark-background-color: #323131;
