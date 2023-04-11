@@ -27,5 +27,7 @@ export function renderMovies(movies) {
     })
     .join('');
 
+
   return markup;
+
 }
