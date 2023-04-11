@@ -1,14 +1,20 @@
 .carousel {
   height: 250px;
-  width: 100%;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
   margin-top: 20px;
   position: relative;
+
+  @media screen and (max-width: 1279px){
+    display: none;
+  }
 }
 
 .carouselbox {
   height: 250px;
-  width: auto;
+  width: 110%;
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
@@ -46,16 +52,23 @@
   text-align: center;
   background-color: rgb(57, 21, 21);
   font-family: sans-serif;
+  cursor: pointer;
+  border-radius: 1rem;
   top: 0;
   z-index: 3;
 }
 
+.carousel .switchLeft:hover,
+.carousel .switchRight:hover{
+  background-color: var(--secondary-text-color);
+}
+
 .carousel .switchLeft {
   position: absolute;
-  left: -50px;
+  left: 0px;
 }
 
 .carousel .switchRight {
   position: absolute;
-  right: -50px;
+  right: -120px;
 }
