@@ -29,9 +29,9 @@ export function renderMovies(movies) {
 
   refs.cardSetEl.innerHTML = markup;
 
-
   //   const links = cardSetEl.querySelectorAll('.movie-card__link');
-  refs.cardSetEl.querySelectorAll('.movie-card__link')
+  refs.cardSetEl
+    .querySelectorAll('.movie-card__link')
     .forEach(element => element.addEventListener('click', onClick));
 }
 
