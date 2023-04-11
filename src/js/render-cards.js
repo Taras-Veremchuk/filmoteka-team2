@@ -1,37 +1,5 @@
-import FilmRestAPI from './restAPI/restAPI';
-import defaultPoster from '../images/default-poster1.jpg';
-import { pagination } from './pagination-home/pagination-home';
-
-// const cardSetEl = document.querySelector('.card-set');
-const fetchedData = new FilmRestAPI();
+import defaultPoster from '../images/default-poster.jpg';
 import { refs } from './refs/refs';
-
-
-
- 
-fetchedData.fetchMovies()
-  .then(data => {
-    renderMovies(data);
-    
-    // PAGINATION
-pagination.setTotalItems(Math.ceil(data.total_results / 20));
-pagination.movePageTo(1);
- pagination.on('beforeMove', async ({ page }) => {
-    try {
-        console.log('Denys');
-      fetchedData.page = page;
-    const data = await fetchedData.fetchMovies();
-    renderMovies(data);
-  } catch (err) {
-    console.log;
-  }
-});
-// PAGINATION
-  })
-  .catch(err => console.log('Error: ', err));
-
-  
- 
 
 export function renderMovies(movies) {
   //   console.log(movies.results);
@@ -42,8 +10,8 @@ export function renderMovies(movies) {
       const {
         poster_path: posterPath,
         title,
-        genre_ids: genreIds,
-        release_date: releseDate,
+        genre_ids: genreIds = [],
+        release_date: releseDate = '',
       } = movie;
       const movieGenres = genreIds.map(genre => genresList[genre]);
       return `<li class="card-set__item movie-card"><a href="" class="movie-card__link"><div class="movie-card__holder"><img src=${
@@ -53,7 +21,7 @@ export function renderMovies(movies) {
               movieGenres.length < 3
                 ? movieGenres.join(', ')
                 : movieGenres.slice(0, 2).join(', ') + ', Other'
-            } |
+            } ${movieGenres.length && releseDate ? '|' : ''}
                 <span class="movie-card__date">${releseDate.slice(0, 4)}</span>
             </p></a></li>`;
     })
