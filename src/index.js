@@ -7,6 +7,6 @@ import './js/search/search';
 import './js/slider';
 
 import './js/restAPI/restAPI';
-// import './js/pagination-home/pagination-home';
+import './js/pagination-home/pagination-home';
 // import './js/refs/refs';
 import './js/theme';
