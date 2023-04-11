@@ -1,5 +1,5 @@
-import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+// import Pagination from 'tui-pagination';
+// import 'tui-pagination/dist/tui-pagination.css';
 
 const container = document.getElementById('pagination');
 const options = {
@@ -28,4 +28,4 @@ const options = {
       '</a>',
   },
 };
-export const pagination = new Pagination('pagination', options);
+// export const pagination = new Pagination('pagination', options);
