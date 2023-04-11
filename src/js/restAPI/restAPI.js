@@ -27,6 +27,8 @@ export default class FilmRestAPI {
       const response = await fetch(BASE_URL);
       const data = await response.json();
 
+      localStorage.removeItem('CURRENT_ITEMS');
+      localStorage.setItem('CURRENT_ITEMS', JSON.stringify(data));
       this.incrementPage();
 
       console.log(data);
@@ -52,6 +54,8 @@ export default class FilmRestAPI {
     try {
       const response = await fetch(BASE_URL);
       const data = await response.json();
+      localStorage.removeItem('CURRENT_ITEMS');
+      localStorage.setItem('CURRENT_ITEMS', JSON.stringify(data));
 
       console.log(data);
       return data;

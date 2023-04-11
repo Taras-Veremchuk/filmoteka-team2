@@ -31,7 +31,8 @@ async function onSearchFormSubmit(e) {
     refs.cardSetEl.innerHTML = '';
     Notiflix.Notify.success(`Hooray! We found ${data.total_results} films.`);
 
-    renderMovies(data);
+    const markupFilms = renderMovies(data);
+    refs.cardSetEl.innerHTML = markupFilms;
 
     const pagination = new Pagination('pagination', options);
     // PAGINATION
@@ -43,7 +44,8 @@ async function onSearchFormSubmit(e) {
       try {
         exemplarFilms.page = page;
         const data = await exemplarFilms.searchMovies();
-        renderMovies(data);
+        const markupsFilms = renderMovies(data);
+        refs.cardSetEl.innerHTML = markupsFilms;
       } catch (err) {
         console.error;
       }
