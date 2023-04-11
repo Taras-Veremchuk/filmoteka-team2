@@ -8,3 +8,4 @@ import './js/render-cards';
 import './js/search/search';
 import './js/theme';
 import './js/fetch-popular';
+import './js/slider';
