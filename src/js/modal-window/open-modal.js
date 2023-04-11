@@ -4,11 +4,12 @@ refs.cardSetEl.addEventListener('click', selectedObject);
 export function selectedObject(evt) {
   evt.preventDefault();
   // ЗМІНИТИ НА А
-  const correctlyEl = evt.target.nodeName === 'IMG';
-  if (!correctlyEl) {
-    return;
-  }
+  // const correctlyEl = evt.target.nodeName === 'IMG';
+  // if (!correctlyEl) {
+  //   return;
+  // }
   const filmdId = evt.target.dataset.id;
+  console.log(evt.target.nodeName);
   console.log(filmdId);
   try {
     const allFilmsObj = JSON.parse(localStorage.getItem('CURRENT_ITEMS'));
