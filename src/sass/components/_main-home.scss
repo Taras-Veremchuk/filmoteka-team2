@@ -1,4 +1,5 @@
 .tui-pagination * {
+<<<<<<< Updated upstream
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -196,3 +197,197 @@
 }
 
 
+=======
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .tui-ico-ellipsis,
+  .tui-ico-first,
+  .tui-ico-last,
+  .tui-ico-next,
+  .tui-ico-prev {
+    overflow: hidden;
+  }
+  
+  .tui-pagination {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+  
+  .tui-pagination .tui-page-btn {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    padding: 6px 0 4px;
+    margin-left: 0;
+    margin-right: 7px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .tui-pagination .tui-page-btn:hover,
+  .tui-pagination .tui-page-btn:focus {
+    background-color:#ff6b02;
+    color: rgb(255, 255, 255);
+    transform: scale(1.15);
+    box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+      rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+  }
+  
+  .tui-pagination .tui-is-selected,
+  .tui-pagination strong {
+    color:#f7f7f7;
+    box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+      rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+    border: 0;
+    cursor: default;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .tui-pagination .tui-is-selected:hover,
+  .tui-pagination .tui-is-selected:focus {
+    color:#f7f7f7;
+    transform: scale(1.15);
+    box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+      rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+  }
+  
+  .tui-pagination .tui-first-child.tui-is-selected,
+  .tui-pagination strong.tui-first-child {
+    margin-left: 0;
+  }
+  
+  .tui-pagination .tui-first-child,
+  .tui-pagination .tui-prev-is-ellip {
+    border-left: 0;
+  }
+  
+  .tui-pagination .tui-last-child,
+  .tui-pagination .tui-next-is-ellip {
+    border-right: 0;
+  }
+  
+  .tui-pagination .tui-first-child.tui-is-selected {
+    color:#f7f7f7;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+    &:hover,
+    &:focus {
+      background-color: #B92F2C;
+      ;
+      color:#f7f7f7;
+      transform: scale(1.15);
+      box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+        rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+    }
+  }
+  
+  .tui-pagination .tui-last-child.tui-is-selected {
+    border: 1px solid #B92F2C;
+    background-color: #B92F2C;
+    color:#f7f7f7 ;
+    transition:250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    &:hover,
+    &:focus {
+      background-color:#B92F2C;
+      color:#f7f7f7;
+      transform: scale(1.15);
+      box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+        rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+    }
+  }
+  
+  .tui-pagination .tui-prev,
+  .tui-pagination .tui-next {
+    overflow: hidden;
+    height: 30px;
+    padding: 0;
+    font-size: 0;
+    line-height: 28px;
+    white-space: nowrap;
+    font-weight: 500;
+    border: 0;
+    background-color: #f7f7f7;
+  }
+  .tui-pagination .tui-first,
+  .tui-pagination .tui-last,
+  .tui-pagination .tui-prev-is-ellip,
+  .tui-pagination .tui-next-is-ellip {
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+    font-weight: 0;
+    border: 0;
+  }
+  
+  .tui-pagination .tui-prev-is-ellip {
+    border-right: 0;
+  }
+  
+  .tui-pagination .tui-next-is-ellip {
+    border-left: 0;
+  }
+  
+  .tui-pagination .tui-first + .tui-prev,
+  .tui-pagination .tui-next + .tui-last {
+    border-left: 0;
+  }
+  
+  .tui-pagination .tui-ico-first,
+  .tui-pagination .tui-ico-prev,
+  .tui-pagination .tui-ico-next,
+  .tui-pagination .tui-ico-last,
+  .tui-pagination .tui-ico-ellip {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0px;
+  }
+  
+  .tui-pagination .tui-prev-is-ellip,
+  .tui-pagination .tui-next-is-ellip {
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .tui-pagination .tui-prev {
+    margin-right: 1px;
+  }
+  
+  .tui-pagination .tui-ico-first {
+    width: 1px;
+    height: 1px;
+  }
+  
+  .tui-pagination .tui-ico-prev {
+    width: 6px;
+    height: 10px;
+    background-position: -26px 0px;
+  }
+  
+  .tui-pagination .tui-ico-next {
+    width: 6px;
+    height: 10px;
+    background-position: -13px -24px;
+  }
+
+  
+>>>>>>> Stashed changes
