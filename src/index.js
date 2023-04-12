@@ -4,5 +4,7 @@ import './js/pagination-home/pagination-home';
 import './js/render-cards';
 import './js/search/search';
 import './js/theme';
+import './js/input/input';
 import './js/fetch-popular';
 import './js/slider';
+import './js/modal-window/open-modal';

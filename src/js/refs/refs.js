@@ -7,4 +7,5 @@ export const refs = {
   btnQuechAdd: document.querySelector('.add-que'),
   libraryWatchedList: document.querySelector('.watched-library-list'),
   libraryQueList: document.querySelector('.que-library-list'),
+  movieModal: document.querySelector('.modal'),
 };
