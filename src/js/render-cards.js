@@ -3,7 +3,7 @@ import defaultPoster from '../images/default-poster.jpg';
 export function renderMovies(movies) {
   const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
   const genresList = JSON.parse(localStorage.getItem('MOVIE_GENRES'));
-  const markup = movies.results
+  const markup = movies
     .map(movie => {
       const {
         poster_path: posterPath,

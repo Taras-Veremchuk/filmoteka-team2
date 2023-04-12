@@ -7,7 +7,7 @@ const fetchedData = new FilmRestAPI();
 fetchedData
   .fetchMovies()
   .then(data => {
-    const markupFilms = renderMovies(data);
+    const markupFilms = renderMovies(data.results);
     refs.cardSetEl.innerHTML = markupFilms;
 
     // PAGINATION
@@ -18,7 +18,7 @@ fetchedData
         // console.log('Denys');
         fetchedData.page = page;
         const data = await fetchedData.fetchMovies();
-        const markupsFilms = renderMovies(data);
+        const markupsFilms = renderMovies(data.results);
         refs.cardSetEl.innerHTML = markupsFilms;
       } catch (err) {
         console.error;
