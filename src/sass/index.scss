@@ -11,7 +11,7 @@
 @import './utils/visually-hidden';
 
 // components
-@import './components/card-modal';
+@import './components/_card-modal';
 @import './components/filter';
 @import './components/pages-numbers-wrapper';
 @import './components/slider';
@@ -24,3 +24,4 @@
 @import './components/card-markup';
 @import './components/button-nav';
 @import './components/theme';
+@import './components/tu-pagination';
