@@ -30,3 +30,15 @@ export const options = {
 };
 
 export const pagination = new Pagination('pagination', options);
+
+const div = document.querySelector('.tui-pagination');
+
+div.addEventListener('click', event => {
+  if (event.target.tagName === 'A') {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth',
+    });
+  }
+});
