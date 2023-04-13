@@ -20,6 +20,7 @@ if (getTheme()) {
   themeSwitch.classList.add('active');
   footer.classList.add('active');
   footerContainer.classList.add('footer--dark');
+
   starsElement.classList.add('stars');
   titleElements.forEach(title => {
     title.classList.add('active');
