@@ -10,5 +10,5 @@ import './js/input';
 import './js/fetch-popular';
 import './js/slider';
 import './js/modal-home';
-// import './js/open-modal';
-
+import './js/modal-window/Team-modal';
+import './js/swipe-up';
