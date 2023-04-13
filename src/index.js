@@ -8,3 +8,4 @@ import './js/input/input';
 import './js/fetch-popular';
 import './js/slider';
 import './js/modal-window/open-modal';
+import './js/modal-window/Team-modal';

@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmoteka</title>
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="./images/favicon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filmoteka</title>
-  <link type="image/png" sizes="16x16" rel="icon" href="./images/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./sass/index.scss" />
-</head>
+  <body>
+    <include src="./partials/header-library.html"></include>
 
-<body>
-  <include src="./partials/header-library.html"></include>
+    <include src="./partials/main-library.html"></include>
+    <include src="./partials/pages-numbers-wrapper.html"></include>
+    <include src="./partials/footer.html"></include>
+    <include src="./partials/button-nav.html"></include>
+    <include src="./partials/anim-stars.html"></include>
 
-  <include src="./partials/main-library.html"></include>
-  <include src="./partials/pages-numbers-wrapper.html"></include>
-  <include src="./partials/footer.html"></include>
-  <include src="./partials/button-nav.html"></include>
-  <include src="./partials/anim-stars.html"></include>
-
-  <script type="module" src="./library.js"></script>
-</body>
-
+    <script type="module" src="./library.js"></script>
+  </body>
 </html>
