@@ -1,24 +1,5 @@
 .header {
   display: block;
-  // background-color: var(--header-background-color);
-}
-
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
-
-  @media screen and (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
-    width: 768px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 1280px;
-  }
 }
 
 .header-container {
@@ -34,8 +15,6 @@
 .header-back {
   display: flex;
   flex-direction: column;
-  //   margin: 20px;
-  //   background-color: white;
   justify-content: space-between;
   background-image: linear-gradient(
     180deg,
@@ -50,33 +29,17 @@
   padding: 14px 14px 20px;
   animation: change-background 10s steps(1) infinite;
   $background-images: url('/src/images/header-mobile.jpg')
-    url('/src/images/header-mobile-yellow.jpg')
-    url('/src/images/header-mobile-orange.jpg'); // список зображень, які потрібно змінювати
+    url('/src/images/header-mobile-yellow.jpg');
 
   @keyframes change-background {
     0% {
-      background-image: nth(
-        $background-images,
-        1
-      ); // встановлюємо перше зображення
+      background-image: nth($background-images, 1);
     }
-    33.3% {
-      background-image: nth(
-        $background-images,
-        2
-      ); // встановлюємо друге зображення
-    }
-    66.6% {
-      background-image: nth(
-        $background-images,
-        3
-      ); // встановлюємо третє зображення
+    50% {
+      background-image: nth($background-images, 2);
     }
     100% {
-      background-image: nth(
-        $background-images,
-        1
-      ); // повертаємося до першого зображення
+      background-image: nth($background-images, 1);
     }
   }
 
@@ -93,32 +56,16 @@
     padding: 16px;
     animation: change-background 10s steps(1) infinite;
     $background-images: url('/src/images/header-tablet.jpg')
-      url('/src/images/header-desctop-yellow.jpg')
-      url('/src/images/header-desctop-orange.jpg');
+      url('/src/images/header-desctop-yellow.jpg');
     @keyframes change-background {
       0% {
-        background-image: nth(
-          $background-images,
-          1
-        ); // встановлюємо перше зображення
+        background-image: nth($background-images, 1);
       }
-      33.3% {
-        background-image: nth(
-          $background-images,
-          2
-        ); // встановлюємо друге зображення
-      }
-      66.6% {
-        background-image: nth(
-          $background-images,
-          3
-        ); // встановлюємо третє зображення
+      50% {
+        background-image: nth($background-images, 2);
       }
       100% {
-        background-image: nth(
-          $background-images,
-          1
-        ); // повертаємося до першого зображення
+        background-image: nth($background-images, 1);
       }
     }
   }
@@ -134,32 +81,16 @@
     padding: 16px 32px 32px;
     animation: change-background 10s steps(1) infinite;
     $background-images: url('/src/images/header-desctop.jpg')
-      url('/src/images/header-desctop-yellow.jpg')
-      url('/src/images/header-desctop-orange.jpg');
+      url('/src/images/header-desctop-yellow.jpg');
     @keyframes change-background {
       0% {
-        background-image: nth(
-          $background-images,
-          1
-        ); // встановлюємо перше зображення
+        background-image: nth($background-images, 1);
       }
-      33.3% {
-        background-image: nth(
-          $background-images,
-          2
-        ); // встановлюємо друге зображення
-      }
-      66.6% {
-        background-image: nth(
-          $background-images,
-          3
-        ); // встановлюємо третє зображення
+      50% {
+        background-image: nth($background-images, 2);
       }
       100% {
-        background-image: nth(
-          $background-images,
-          1
-        ); // повертаємося до першого зображення
+        background-image: nth($background-images, 1);
       }
     }
   }
@@ -198,13 +129,12 @@
 .header-relay {
   display: flex;
   flex-direction: column;
-
   @media screen and (min-width: 768px) {
     justify-content: flex-end;
     align-items: center;
-    gap: 4px;
     display: flex;
     flex-direction: row-reverse;
+    gap: 4px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -212,21 +142,20 @@
   }
 }
 
-// .navigation {
-// }
-.navigation__list {
-  //   padding-top: 14px;
-  list-style: none;
+.navigation {
   display: flex;
 }
+.navigation__list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  @media screen and (min-width: 1280px) {
+    gap: 8px;
+  }
+}
 
-// .nav__item {
-// }
 .nav__link-home {
-  //   margin-top: 14px;
-  //   margin-left: 14px;
   border-radius: 100px;
-  //   background-color: var(--navigation-color);
   color: var(--btn-text-color);
   width: 87px;
   height: 34px;
@@ -263,26 +192,19 @@
   }
 }
 
-// .nav__link-home:hover {
-//   color: var(--btn-text-color);
-//   background-color: var(--main-text-color);
-// }
-
-.active {
+.current {
   color: var(--btn-text-color);
   background-color: var(--main-text-color);
 }
 
-// .nav-item {
-// }
+.nav__item {
+  cursor: pointer;
+}
 .nav__link-library {
-  //   margin-top: 14px;
-  margin-left: 4px;
   background-color: var(--btn-text-color);
   color: var(--main-text-color);
   width: 113px;
   height: 34px;
-  //   padding: 10px 22px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
@@ -291,7 +213,6 @@
   align-items: center;
   justify-content: center;
   letter-spacing: 0.06em;
-  cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 100px;
@@ -304,24 +225,15 @@
   @media screen and (min-width: 768px) {
     width: 109px;
     height: 38px;
-    // padding: 12px 20px;
   }
 
   @media screen and (min-width: 1280px) {
-    margin-left: 8px;
     width: 117px;
     height: 42px;
-    // padding: 12px 20px;
   }
 }
 
-// .nav__link-library:hover {
-//   color: var(--btn-text-color);
-//   background-color: var(--main-text-color);
-// }
-
 .search-form {
-  // position: relative;
   display: flex;
   margin-top: 8px;
   max-width: 252px;
@@ -376,7 +288,6 @@
   align-items: center;
   font-weight: 400;
 
-  // align-items: center;
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: 1.14;
@@ -420,12 +331,14 @@
 }
 
 .logo-header {
-  // margin: 0 auto;
   cursor: pointer;
   display: flex;
   text-decoration: none;
   align-items: center;
-  // margin-top: 312px;
+  gap: 8px;
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 }
 
 .logo-header__icon {
@@ -460,16 +373,14 @@
 }
 
 .logo-name {
-  // height: 38px;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 38px;
   display: flex;
-  // margin: 0 auto;
+
   text-decoration: none;
   color: var(--btn-text-color);
-  margin-left: 8px;
   align-items: center;
   -webkit-animation: tracking-in-contract 0.8s
     cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -513,6 +424,6 @@
   @media screen and (min-width: 1280px) {
     font-size: 64px;
     line-height: 1.17;
-    margin-left: 16px;
+    // margin-left: 16px;
   }
 }
