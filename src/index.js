@@ -11,4 +11,3 @@ import './js/fetch-popular';
 import './js/slider';
 import './js/modal-home';
 // import './js/open-modal';
-
