@@ -23,15 +23,19 @@ refreshMarkup() {
 }
 
 showQueue() {
-    const markupFilms = renderMovies(JSON.parse(localStorage.getItem('QUEUE_MOVIES')));
+    const movies = JSON.parse(localStorage.getItem('QUEUE_MOVIES'));
+    if(movies) {
+    const markupFilms = renderMovies(movies);
     refs.cardSetEl.innerHTML = markupFilms;
-    this.currentField = 'queue';
+    this.currentField = 'queue';}
     }
     
-showWatched() {
-    const markupFilms = renderMovies(JSON.parse(localStorage.getItem('WATCHED_MOVIES')));
+showWatched() {    
+    const movies = JSON.parse(localStorage.getItem('WATCHED_MOVIES'));
+    if(movies) {
+    const markupFilms = renderMovies(movies);
     refs.cardSetEl.innerHTML = markupFilms;
-    this.currentField = 'watched';
+    this.currentField = 'watched';}
 }};
 
 export default new RefreshLibrary();
