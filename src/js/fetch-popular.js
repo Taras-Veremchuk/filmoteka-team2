@@ -1,7 +1,7 @@
-import FilmRestAPI from './restAPI/restAPI';
+import FilmRestAPI from './restAPI';
 import { renderMovies } from './render-cards';
-import { pagination } from './pagination-home/pagination-home';
-import { refs } from './refs/refs';
+import { pagination } from './pagination-home';
+import { refs } from './refs';
 const fetchedData = new FilmRestAPI();
 
 fetchedData

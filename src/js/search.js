@@ -1,9 +1,9 @@
-import FilmRestAPI from '../restAPI/restAPI';
+import FilmRestAPI from './restAPI';
 import Pagination from 'tui-pagination';
-import { refs } from '../refs/refs';
+import { refs } from './refs';
 import Notiflix from 'notiflix';
-import { renderMovies } from '../render-cards';
-import { options } from '../pagination-home/pagination-home';
+import { renderMovies } from './render-cards';
+import { options } from './pagination-home';
 
 const exemplarFilms = new FilmRestAPI();
 

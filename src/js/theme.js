@@ -9,6 +9,7 @@ const starsElement = document.querySelector('.anim-stars');
 const setTheme = isDark => {
   localStorage.setItem('isDark', isDark);
 };
+
 const getTheme = () => {
   return localStorage.getItem('isDark') === 'true';
 };
@@ -19,7 +20,7 @@ if (getTheme()) {
   themeSwitch.classList.add('active');
   footer.classList.add('active');
   footerContainer.classList.add('footer--dark');
-
+  starsElement.classList.add('stars');
   titleElements.forEach(title => {
     title.classList.add('active');
   });
@@ -33,7 +34,6 @@ if (getTheme()) {
   footer.classList.remove('active');
   footerContainer.classList.remove('footer--dark');
   starsElement.classList.remove('stars');
-
   titleElements.forEach(title => {
     title.classList.remove('active');
   });
@@ -42,21 +42,19 @@ if (getTheme()) {
   });
 }
 
-themeSwitch.addEventListener('click', () => {
-  document.querySelector('#theme').addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    theme.classList.toggle('active');
-    themeSwitch.classList.toggle('active');
-    footer.classList.toggle('active');
-    footerContainer.classList.toggle('footer--dark');
-    starsElement.classList.toggle('stars');
-    titleElements.forEach(title => {
-      title.classList.toggle('active');
-    });
-    genreElements.forEach(genre => {
-      genre.classList.toggle('active');
-    });
-
-    setTheme(isDark);
+document.querySelector('#theme').addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark');
+  theme.classList.toggle('active');
+  themeSwitch.classList.toggle('active');
+  footer.classList.toggle('active');
+  footerContainer.classList.toggle('footer--dark');
+  starsElement.classList.toggle('stars');
+  titleElements.forEach(title => {
+    title.classList.toggle('active');
   });
+  genreElements.forEach(genre => {
+    genre.classList.toggle('active');
+  });
+
+  setTheme(isDark);
 });
