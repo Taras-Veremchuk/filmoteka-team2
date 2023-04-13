@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import '../../sass/components/Team-modal.scss';
-
+import '../../sass/components/_team-modal.scss';
+import '../refs';
 
 const teamMembers = [
   {
@@ -137,12 +137,8 @@ const teamMembers = [
 
 const generateTeamMarkup = members => {
   let markup = `
-    <div class="main">
-    <span class="close">&times;</span>
-
-
-    
-  `;
+    <div class="main-team">
+    <span class="close">&times;</span>`;
 
   members.forEach(member => {
     if (member.name) {
@@ -220,7 +216,7 @@ function openModalTeam(e) {
   e.preventDefault();
   modalTeam.show();
 
-  window.addEventListener('keydown', closeModalTeam);
+  document.addEventListener('keydown', closeModalTeam);
 
   function closeModalTeam(e) {
     if (e.code === 'Escape') {
@@ -229,10 +225,3 @@ function openModalTeam(e) {
     }
   }
 }
-
-modalTeam.show(function () {
-  const closeTeam = document.querySelector('.close');
-  closeTeam.addEventListener('click', function () {
-    modalTeam.close();
-  });
-});
