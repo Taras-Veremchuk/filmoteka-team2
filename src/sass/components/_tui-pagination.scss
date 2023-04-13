@@ -17,7 +17,7 @@
     font-size: 0;
     margin-top: 71px;
 }
-
+// /бэкграунд для черного фона/ 
 .tui-pagination .tui-page-btn {
     display: inline-block;
     position: relative;
@@ -197,6 +197,32 @@
     padding: 8px 0 6px;
     vertical-align: top
 }
-/* .tui{
-    color:#333;
-} */
+.tui-pagination .tui-page-btn {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    /* padding: 6px 0 4px; */
+    margin-left: 0;
+    margin-right: 7px; 
+    /* color: #ff6b02; */
+    font-size: 12px;
+    font-weight: 400;
+    /* line-height: 15px; */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  } 
+  .tui-pagination .tui-page-btn:hover,
+.tui-pagination .tui-page-btn:focus {
+  /* background-color:#ff6b02; */
+  color: rgb(255, 255, 255);
+  transform: scale(1.15);
+  box-shadow: rgba(136, 165, 191, 0.48) 2px 1px 6px 0px,
+    rgba(255, 255, 255, 0.8) -2px -1px 6px 0px;
+}
