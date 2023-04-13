@@ -16,9 +16,30 @@
   transition: transform 0.3s ease-out, background-color 0.2s ease-in;
   cursor: pointer;
 
-  &.active {
-    background-color: var(--theme-light-div-btn-color);
-    transition-duration: 0.7s;
+  outline: 2px solid #87cefa;
+  outline-offset: -2px;
+
+  transition: transform 0.5s ease-out;
+
+  &:hover,
+  &:focus {
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: transform 0.3s ease-out, outline 0.2s ease-in;
+    outline: 2px solid #ffa500;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translateY(-1px);
+    }
+    50% {
+      transform: translateY(2px);
+    }
+    100% {
+      transform: translateY(-1px);
+    }
   }
 }
 
