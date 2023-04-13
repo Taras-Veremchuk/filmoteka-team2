@@ -1,5 +1,5 @@
 import { renderMovies } from './render-cards';
-import { refs } from './refs/refs';
+import { refs } from './refs';
 
 
 
