@@ -62,7 +62,7 @@ const teamMembers = [
   },
   {
     name: 'Yevhenii Doroshenko',
-    github: 'https://github.com/',
+    github: 'https://github.com/YevheniiDoroshenko88',
     photo_path: 'img/team-img/eugen.png',
     linkedin: 'https://www.linkedin.com/in/yevhenii-doroshenko-baba26270',
     facebook: 'https://www.facebook.com/',
