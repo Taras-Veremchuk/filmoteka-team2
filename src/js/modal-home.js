@@ -5,9 +5,10 @@ refs.cardSetEl.addEventListener('click', openModalHome);
 
 function openModalHome(evt) {
   evt.preventDefault();
+  console.log(evt.target);
   if (evt.target.nodeName !== 'A') {
     return;
   }
-  const allFilmsObj = JSON.parse(localStorage.getItem('CURRENT_ITEMS'));  
+  const allFilmsObj = JSON.parse(localStorage.getItem('CURRENT_ITEMS'));
   openModal(allFilmsObj.results, evt.target.dataset.id);
 }

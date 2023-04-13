@@ -12,4 +12,3 @@ import './js/slider';
 import './js/modal-home';
 import './js/modal-window/Team-modal';
 import './js/swipe-up';
-// import './js/open-modal';
