@@ -1,19 +1,8 @@
 import { refs } from '../refs/refs';
 import defaultPoster from '../../images/default-poster.jpg';
+import refreshLibrary from '../refresh-library'
 
-refs.cardSetEl.addEventListener('click', openModalHome);
-
-function openModalHome(evt) {
-  evt.preventDefault();
-  if (evt.target.nodeName !== 'A') {
-    return;
-  }
-  const allFilmsObj = JSON.parse(localStorage.getItem('CURRENT_ITEMS'));  
-  openModal(allFilmsObj.results, evt.target.dataset.id);
-}
-
-export function openModal(films, id) {
-    
+export function openModal(films, id) {    
   const selectedFilm = films.find(
     movie => movie.id == id
   );
@@ -27,11 +16,11 @@ export function openModal(films, id) {
   renderModal(selectedFilm);
   refs.movieModal.parentElement.classList.toggle('is-hidden');
 
-  const closeBtn = refs.movieModal.querySelector('.btn-modal-close');
-  closeBtn.addEventListener('click', closeModal);
-  document.addEventListener('keydown', escClose);
+  document.addEventListener('keydown', closeModal);
+  refs.movieModal.parentElement.addEventListener('click', closeModal)
   refs.movieModal.querySelector('.btn-modal__watched').addEventListener('click', addToWatched);
   refs.movieModal.querySelector('.btn-modal__queue').addEventListener('click', addToQueue);
+  
   
        
        function addToWatched(evt) {
@@ -42,6 +31,7 @@ export function openModal(films, id) {
         } else {watchedArr.splice(filmIdx, 1)};
         localStorage.setItem('WATCHED_MOVIES', JSON.stringify(watchedArr)); 
         evt.target.textContent = evt.target.textContent === 'ADD TO WATCHED' ? 'REMOVE FROM WATCHED' : 'ADD TO WATCHED';
+        refreshLibrary.refreshMarkup();
       };
       
       function addToQueue(evt) {
@@ -52,7 +42,7 @@ export function openModal(films, id) {
         } else {queueArr.splice(filmIdx, 1)};
         evt.target.textContent = evt.target.textContent === 'ADD TO QUEUE' ? 'REMOVE FROM QUEUE' : 'ADD TO QUEUE';
         localStorage.setItem('QUEUE_MOVIES', JSON.stringify(queueArr));
-        
+        refreshLibrary.refreshMarkup();
       };
 }
 
@@ -86,11 +76,6 @@ export function openModal(films, id) {
 // evt.target.textContent = evt.target.textContent === 'ADD TO QUEUE' ? 'REMOVE FROM QUEUE' : 'ADD TO QUEUE';
      // };
 
-function escClose(evt) {
-  if (evt.key === 'Escape') {
-    closeModal();
-  }
-}
 
 function renderModal({
   poster_path: posterPath,
@@ -119,7 +104,7 @@ function renderModal({
       <tr>
         <td class='modal-info__title'>Vote / Votes</td>
         <td class='modal-info__value'>
-          <span class='modal-info__rate'>${voteAverage?.toFixed(1)}</span>
+          <span class='modal-info__rate'>${voteAverage ?voteAverage?.toFixed(1):'?'}</span>
           /
           <span class='modal-info__rate'>${voteCount}</span>
         </td>
@@ -149,7 +134,11 @@ function renderModal({
   </div>`;
 }
 
-function closeModal() {
-  refs.movieModal.parentElement.classList.add('is-hidden');
-  document.removeEventListener('keydown', escClose)
+function closeModal(evt) {
+  if(!evt.target.classList.contains('backdrop') && !evt.target.classList.contains('btn-modal-close') && evt.key !== 'Escape') {
+    return;
+  }
+   refs.movieModal.parentElement.classList.add('is-hidden');
+  document.removeEventListener('keydown', closeModal);
+  evt.currentTarget.removeEventListener('click', closeModal);
 }
