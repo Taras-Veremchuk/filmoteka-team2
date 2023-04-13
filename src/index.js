@@ -9,9 +9,7 @@ import './js/theme';
 import './js/input';
 import './js/fetch-popular';
 import './js/slider';
-
 import './js/modal-window/team-modal';
-
-import './js/modal-home';
+// import './js/modal-home';
 import './js/swipe-up';
 // import './js/open-modal';

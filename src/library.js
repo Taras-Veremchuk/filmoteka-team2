@@ -6,7 +6,4 @@ import './js/refresh-library';
 import './js/library-filter';
 import './js/theme';
 import './js/open-modal';
-import './js/restAPI';
-import './js/theme';
-import './js/open-modal';
-
+import './js/modal-window/team-modal';
