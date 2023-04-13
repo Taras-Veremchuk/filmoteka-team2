@@ -1,5 +1,4 @@
 @import './common';
-// @import './example';
 
 // base
 @import './base/reset';
@@ -11,17 +10,15 @@
 @import './utils/visually-hidden';
 
 // components
-@import './components/_card-modal';
-@import './components/filter';
-@import './components/pages-numbers-wrapper';
+@import './components/card-modal';
 @import './components/slider';
-@import './components/spinner';
+// @import './components/spinner';
 @import './components/main-home';
-@import './components/main-library';
+// @import './components/main-library';
 @import './components/header-home';
 @import './components/header-library';
 @import './components/footer';
 @import './components/card-markup';
-@import './components/button-nav';
 @import './components/theme';
 @import './components/tu-pagination';
+@import './components/team-modal';

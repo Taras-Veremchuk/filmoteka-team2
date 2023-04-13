@@ -2,6 +2,15 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
  import '../../sass/components/_tu-pagination.scss';
 const container = document.getElementById('pagination');
+container.addEventListener('click', event => {
+  if (event.target.tagName === 'A') {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth',
+    });
+  }
+});
 export const options = {
   // totalItems: 10,
   itemsPerPage: 1,

@@ -3,7 +3,7 @@ import defaultPoster from '../images/default-poster.jpg';
 export function renderMovies(movies) {
   const IMG_BASE = 'https://image.tmdb.org/t/p/w400';
   const genresList = JSON.parse(localStorage.getItem('MOVIE_GENRES'));
-  const markup = movies.results
+  const markup = movies
     .map(movie => {
       const {
         poster_path: posterPath,
@@ -13,9 +13,9 @@ export function renderMovies(movies) {
         release_date: releseDate = '',
       } = movie;
       const movieGenres = genreIds.map(genre => genresList[genre]);
-      return `<li class="card-set__item movie-card" data-id=${id}><a href=""  class="movie-card__link"><div class="movie-card__holder"><img src=${
+      return `<li class="card-set__item movie-card"><a href="#?" class="movie-card__link" data-id=${id}><div class="movie-card__holder"><img src=${
         posterPath ? IMG_BASE + posterPath : defaultPoster
-      } alt="${title} poster" class="movie-card__img" data-id=${id} width="100%"></div>
+      } alt="${title} poster" class="movie-card__img" width="100%"></div>
         <p class="movie-card__title">${title}
             </p><p class="movie-card__genre">${
               movieGenres.length < 3

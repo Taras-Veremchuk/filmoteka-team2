@@ -1,13 +1,15 @@
-import FilmRestAPI from './restAPI/restAPI';
+import FilmRestAPI from './restAPI';
 import { renderMovies } from './render-cards';
-import { pagination } from './pagination-home/pagination-home';
-import { refs } from './refs/refs';
+import { pagination } from './pagination-home';
+import { refs } from './refs';
+import refreshLibrary from './refresh-library'
 const fetchedData = new FilmRestAPI();
 
 fetchedData
   .fetchMovies()
   .then(data => {
-    const markupFilms = renderMovies(data);
+    refreshLibrary.currentField = 'popular';
+    const markupFilms = renderMovies(data.results);
     refs.cardSetEl.innerHTML = markupFilms;
 
     // PAGINATION
@@ -18,7 +20,7 @@ fetchedData
         // console.log('Denys');
         fetchedData.page = page;
         const data = await fetchedData.fetchMovies();
-        const markupsFilms = renderMovies(data);
+        const markupsFilms = renderMovies(data.results);
         refs.cardSetEl.innerHTML = markupsFilms;
       } catch (err) {
         console.error;
