@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-
+ import '../../sass/components/_tu-pagination.scss';
 const container = document.getElementById('pagination');
 export const options = {
   // totalItems: 10,
