@@ -27,7 +27,7 @@ export function openModal(films, id) {
                const watchedArr = JSON.parse(localStorage.getItem('WATCHED_MOVIES'));
         const filmIdx = watchedArr.findIndex(el => el.id == id);
         if(filmIdx == -1) {
-          watchedArr.push(selectedFilm);
+         watchedArr.unshift(selectedFilm);
         } else {watchedArr.splice(filmIdx, 1)};
         localStorage.setItem('WATCHED_MOVIES', JSON.stringify(watchedArr)); 
         evt.target.textContent = evt.target.textContent === 'ADD TO WATCHED' ? 'REMOVE FROM WATCHED' : 'ADD TO WATCHED';
