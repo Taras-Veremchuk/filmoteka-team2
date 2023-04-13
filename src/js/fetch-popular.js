@@ -2,11 +2,13 @@ import FilmRestAPI from './restAPI';
 import { renderMovies } from './render-cards';
 import { pagination } from './pagination-home';
 import { refs } from './refs';
+import refreshLibrary from './refresh-library'
 const fetchedData = new FilmRestAPI();
 
 fetchedData
   .fetchMovies()
   .then(data => {
+    refreshLibrary.currentField = 'popular';
     const markupFilms = renderMovies(data.results);
     refs.cardSetEl.innerHTML = markupFilms;
 

@@ -1,4 +1,5 @@
 import './sass/index.scss';
+
 import './js/localstorage';
 import './js/restAPI';
 import './js/pagination-home';
@@ -8,4 +9,6 @@ import './js/theme';
 import './js/input';
 import './js/fetch-popular';
 import './js/slider';
-import './js/open-modal';
+import './js/modal-home';
+// import './js/open-modal';
+
