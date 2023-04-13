@@ -38,7 +38,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &--active {
     color: var(--btn-text-color);
     background-color: var(--secondary-text-color);
   }
