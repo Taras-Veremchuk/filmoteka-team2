@@ -1,4 +1,4 @@
-import { refs } from '../refs/refs';
+import { refs } from './refs';
 import { openModal } from './open-modal';
 
 refs.cardSetEl.addEventListener('click', openModalHome);

@@ -1,6 +1,6 @@
-import { refs } from '../refs/refs';
-import defaultPoster from '../../images/default-poster.jpg';
-import refreshLibrary from '../refresh-library'
+import { refs } from './refs';
+import defaultPoster from '../images/default-poster.jpg';
+import refreshLibrary from './refresh-library'
 
 export function openModal(films, id) {    
   const selectedFilm = films.find(

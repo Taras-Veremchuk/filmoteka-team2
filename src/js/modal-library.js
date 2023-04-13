@@ -1,6 +1,6 @@
-import { refs } from '../refs/refs';
+import { refs } from './refs';
 import { openModal } from './open-modal';
-import refreshLibrary from '../refresh-library'
+import refreshLibrary from './refresh-library'
 
 refreshLibrary.showQueue();
 refs.cardSetEl.addEventListener('click', openModalLibrary);
