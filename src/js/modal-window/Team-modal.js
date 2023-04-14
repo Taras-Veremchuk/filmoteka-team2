@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: 'Denys Astafiev',
     github: 'https://github.com/denius97',
-    photo_path: 'img/team-img/denchik.png',
+    photo_path: 'img/team-img/den.png',
     linkedin: 'https://www.linkedin.com/',
     facebook: 'https://www.facebook.com/',
     insta: 'https://www.instagram.com/',
