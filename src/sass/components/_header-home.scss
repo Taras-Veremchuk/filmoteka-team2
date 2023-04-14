@@ -3,12 +3,12 @@
 }
 
 .header-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-  @media screen and(min-width: 768px) {
-    margin-top: 32px;
-    margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 
@@ -241,7 +241,7 @@
   background-color: var(--btn-text-color);
   border-radius: 50px;
 
-  @media screen and(min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin-top: 0;
     width: 165px;
     height: 38px;
@@ -362,13 +362,13 @@
 }
 .fliper {
   animation: flip 4s linear infinite;
-  @keyframes flip {
-    0% {
-      transform: rotateY(0deg) rotateZ(0deg);
-    }
-    100% {
-      transform: rotateY(360deg) rotateZ(360deg);
-    }
+}
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(360deg);
   }
 }
 
@@ -382,30 +382,34 @@
   text-decoration: none;
   color: var(--btn-text-color);
   align-items: center;
-  -webkit-animation: tracking-in-expand 0.7s ease-in-out 0.25s both;
-  animation: tracking-in-expand 0.7s ease-in-out 0.25s both;
+  -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    0.25s both;
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s
+    both;
 
-  @-webkit-keyframes tracking-in-expand {
+  @-webkit-keyframes focus-in-expand {
     0% {
       letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
       opacity: 0;
     }
-    40% {
-      opacity: 0.6;
-    }
     100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
       opacity: 1;
     }
   }
-  @keyframes tracking-in-expand {
+  @keyframes focus-in-expand {
     0% {
       letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
       opacity: 0;
     }
-    40% {
-      opacity: 0.6;
-    }
     100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
       opacity: 1;
     }
   }
@@ -418,6 +422,5 @@
   @media screen and (min-width: 1280px) {
     font-size: 64px;
     line-height: 1.17;
-    // margin-left: 16px;
   }
 }
