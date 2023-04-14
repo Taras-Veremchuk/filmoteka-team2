@@ -5,7 +5,6 @@ refs.cardSetEl.addEventListener('click', openModalHome);
 
 function openModalHome(evt) {
   evt.preventDefault();
-  console.log(evt.target);
   if (evt.target.nodeName !== 'A') {
     return;
   }
