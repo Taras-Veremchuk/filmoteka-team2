@@ -4,6 +4,7 @@ import { refs } from './refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from './render-cards';
 import { options } from './pagination-home';
+import {hideSpinner} from './spiner'
 
 const exemplarFilms = new FilmRestAPI();
 
@@ -11,6 +12,7 @@ refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(e) {
   e.preventDefault();
+  
 
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
@@ -33,6 +35,7 @@ async function onSearchFormSubmit(e) {
 
     const markupFilms = renderMovies(data.results);
     refs.cardSetEl.innerHTML = markupFilms;
+    hideSpinner();
 
     const pagination = new Pagination('pagination', options);
     // PAGINATION
@@ -46,6 +49,7 @@ async function onSearchFormSubmit(e) {
         const data = await exemplarFilms.searchMovies();
         const markupsFilms = renderMovies(data.results);
         refs.cardSetEl.innerHTML = markupsFilms;
+        hideSpinner();
       } catch (err) {
         console.error;
       }

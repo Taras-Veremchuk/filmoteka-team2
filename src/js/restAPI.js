@@ -5,7 +5,7 @@
 //  -fetchMovies(movies for main page)
 //  -searchMovies(for search form)
 //  -getGenres(returned array of objects, which include genreID and genreName)
-
+import {showSpinner} from './spiner'
 export default class FilmRestAPI {
   constructor() {
     this.searchQuery = '';
@@ -13,6 +13,7 @@ export default class FilmRestAPI {
   }
 
   async fetchMovies() {
+    showSpinner();
     const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
     const searchParams = new URLSearchParams({
       page: this.page,
@@ -39,6 +40,7 @@ export default class FilmRestAPI {
   }
 
   async searchMovies() {
+    showSpinner();
     const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
     const searchParams = new URLSearchParams({
       page: this.page,
