@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  // margin-top: 20px;
   position: relative;
 
   @media screen and (max-width: 1279px){
@@ -18,9 +18,10 @@
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
-  padding-left: 45px;
-  padding-right: 35px;
+  padding-left: 57px;
+  padding-right: 47px;
   text-align: center;
+  gap: 12px;
   padding-bottom: 10px !important;
   align-items: center;
   display: flex;
@@ -31,7 +32,7 @@
   min-height: 147px;
   height: 200px;
   background-size: cover;
-  margin: 5px 10px;
+  margin: 5px 0;
   cursor: pointer;
   transition: 0.5s ease;
   z-index: 2;

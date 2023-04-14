@@ -1,15 +1,11 @@
-
 .tab__desk-btn {
   margin-left: auto;
-
   @media screen and (max-width: 767px) {
     display: none;
   }
 }
-
 .btn-library {
   margin-top: 16px;
-
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -35,7 +31,6 @@
     width: 96px;
     height: 38px;
   }
-
   @media screen and (min-width: 1280px) {
     margin-left: 8px;
     width: 117px;
@@ -49,41 +44,34 @@
     background-color: var(--secondary-text-color);
   }
 }
-
 .btn-top-queue {
   @media screen and (min-width: 1280px) {
     width: 86px;
     height: 42px;
   }
-
   @media screen and (min-width: 768px) {
     width: 86px;
     height: 38px;
   }
 }
-
 .btn-top-watched {
   @media screen and (min-width: 1280px) {
     width: 120px;
     height: 42px;
   }
-
   @media screen and (min-width: 768px) {
     width: 102px;
     height: 38px;
   }
 }
-
 .active-library {
   background-color: var(--main-text-color);
   color: var(--btn-text-color);
 }
-
 .not-active {
   color: var(--main-text-color);
   background-color: var(--btn-text-color);
 }
-
 .btn__library-bottom {
   background-color: var(--btn-text-color);
   color: var(--secondary-text-color);
@@ -103,13 +91,47 @@
     color: var(--btn-text-color);
   }
 }
-
 .btn__watched-bot {
   width: 102px;
   height: 34px;
 }
-
 .btn__queue-bot {
   width: 86px;
   height: 34px;
+}
+
+/* SWIIIIPER  FROM ICE-CREAM */
+.btn--to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 10000;
+  border: none;
+  outline: none;
+  background-color: rgb(220, 220, 220);
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition: background-color 250ms ease-in-out;
+  transition: scale 250ms ease-in-out;
+}
+.btn--to-top:hover,
+.btn--to-top:focus {
+  background-color: rgb(177, 177, 177);
+  scale: 1.1;
+}
+
+.icon-arrow {
+  fill: var(--secondary-text-color);
+}
+
+.hidden {
+  display: none;
 }
