@@ -15,7 +15,8 @@ async function onSearchFormSubmit(e) {
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
   if (!exemplarFilms.searchQuery) {
-    Notiflix.Notify.info('Please write something');
+    // Notiflix.Notify.info('Please write something');
+    refs.cardSetEl.innerHTML = '<li>Please write something</li>';
     return;
   }
 
