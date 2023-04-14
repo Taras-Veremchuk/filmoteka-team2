@@ -6,7 +6,7 @@ import './js/pagination-home';
 import './js/render-cards';
 import './js/search';
 import './js/theme';
-import './js/input';
+// import './js/input';
 import './js/fetch-popular';
 import './js/slider';
 import './js/modal-home';

@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: 'Denys Astafiev',
     github: 'https://github.com/denius97',
-    photo_path: 'img/team-img/denchik.png',
+    photo_path: 'img/team-img/den.png',
     linkedin: 'https://www.linkedin.com/',
     facebook: 'https://www.facebook.com/',
     insta: 'https://www.instagram.com/',
@@ -215,12 +215,17 @@ function openModalTeam(e) {
   e.preventDefault();
   modalTeam.show();
 
-  document.addEventListener('keydown', closeModalTeam);
+document.addEventListener('keydown', closeModalTeam);
+document.addEventListener('click', closeModalTeam);
+
 
   function closeModalTeam(e) {
-    if (e.code === 'Escape') {
+    console.log(e.target.nodeName);
+    if (e.code === 'Escape' || e.target.classList.contains('close') ) {
       modalTeam.close();
-      window.removeEventListener('keydown', closeModalTeam);
+      document.removeEventListener('keydown', closeModalTeam);
+      document.removeEventListener('click', closeModalTeam);
+
     }
   }
 }

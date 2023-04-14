@@ -2,8 +2,12 @@
     padding-top: 29px;
     padding-bottom: 29px;
     background-color: #f7f7f7;
+    margin-top: 40px;
 
-    //margin: 0 auto;
+    @media screen and (min-width: 768px) {
+        margin-top: 60px;
+
+    }
     @media screen and (min-width: 1280px) {
         min-width: 1280px;
 

@@ -1,5 +1,5 @@
 // import { hideSpinner, showSpinner } from "./spiner";
-
+import { openModalSlider } from "./modal-slider";
 
 const sliders = document.querySelector('.carouselbox')
 var scrollPerClick;
@@ -50,10 +50,12 @@ async function renderTrendy() {
     result.map(function (item,index) {
         sliders.insertAdjacentHTML(
             "beforeend",
-            `<img class="img-${index} slider-img" src="https://www.themoviedb.org/t/p/w440_and_h660_face/${item.poster_path}"/>`
+            `<img class="img-${index} slider-img" src="https://www.themoviedb.org/t/p/w440_and_h660_face/${item.poster_path}" data-id=${item.id} />`
 
         )
     })
+    localStorage.setItem('WEEK_POPULAR', JSON.stringify(result));
+    sliders.addEventListener('click', openModalSlider);
 
     scrollPerClick = 400; 
 }
