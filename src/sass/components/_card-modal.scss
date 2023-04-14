@@ -179,7 +179,8 @@
   
     &:first-child {
       color: #fff;
-      background-color: var(--accent-color);
+      // background-color: var(--accent-color);
+      background-color: #B92F2C;
     }
   }
   
@@ -216,6 +217,7 @@
     justify-content: center;
     padding: 0;
     background-color: #fff;
+   
   }
   
   .btn-modal__icon {
@@ -241,7 +243,7 @@
     min-height: 44px;
     padding: 0 5px;
     border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 100px;
     background-color: transparent;
     font-weight: inherit;
     font-size: 12px;
@@ -267,8 +269,10 @@
   
     &:hover,
     &:focus {
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
+      // background-color: var(--accent-color);
+      background-color: #B92F2C;
+      // border-color: var(--accent-color);
+      border-color:#B92F2C;
       color: #fff;
     }
   }
