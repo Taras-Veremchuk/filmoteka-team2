@@ -3,6 +3,7 @@ import { renderMovies } from './render-cards';
 import { pagination } from './pagination-home';
 import { refs } from './refs';
 import refreshLibrary from './refresh-library'
+import {hideSpinner} from './spiner'
 const fetchedData = new FilmRestAPI();
 
 fetchedData
@@ -11,6 +12,7 @@ fetchedData
     refreshLibrary.currentField = 'popular';
     const markupFilms = renderMovies(data.results);
     refs.cardSetEl.innerHTML = markupFilms;
+    hideSpinner();
 
     // PAGINATION
     pagination.setTotalItems(Math.ceil(data.total_results / 20));
@@ -22,6 +24,7 @@ fetchedData
         const data = await fetchedData.fetchMovies();
         const markupsFilms = renderMovies(data.results);
         refs.cardSetEl.innerHTML = markupsFilms;
+        hideSpinner();
       } catch (err) {
         console.error;
       }
