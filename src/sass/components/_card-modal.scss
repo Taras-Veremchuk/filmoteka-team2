@@ -179,7 +179,9 @@
   
     &:first-child {
       color: #fff;
-      background-color: var(--accent-color);
+      // background-color: var(--accent-color);
+      background-color: 
+      #B92F2C;
     }
   }
   
@@ -216,6 +218,7 @@
     justify-content: center;
     padding: 0;
     background-color: #fff;
+   
   }
   
   .btn-modal__icon {
@@ -226,7 +229,8 @@
   
     .btn-modal-close:hover &,
     .btn-modal-close:focus & {
-      fill: var(--accent-color);
+      // fill: var(--accent-color);
+      fill: #B92F2C;
     }
   }
   
@@ -237,11 +241,14 @@
   
   .btn-modal {
     display: inline-block;
-    width: 110px;
+    // width: 110px;
+    width: 165px;
     min-height: 44px;
     padding: 0 5px;
     border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 100px;
+
+    // border-radius: 5px;
     background-color: transparent;
     font-weight: inherit;
     font-size: 12px;
@@ -263,12 +270,15 @@
   
     @media screen and (min-width: 1024px) {
       width: 136px;
+      
     }
   
     &:hover,
     &:focus {
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
+      // background-color: var(--accent-color);
+      background-color: #B92F2C;
+      // border-color: var(--accent-color);
+      border-color:#B92F2C;
       color: #fff;
     }
   }
