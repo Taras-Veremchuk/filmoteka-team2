@@ -19,6 +19,10 @@ class RefreshLibrary {
     if (movies) {
       let markupFilms = '';
       if (this.filmName) {
+        if(this.filmName?.length < 2) {
+            // refs.cardSetEl.innerHTML = '';
+            return;
+        }
         const foundMovies = movies.filter(movie =>
           movie.title.toLowerCase().includes(this.filmName)
         );
@@ -36,9 +40,14 @@ class RefreshLibrary {
     if (movies) {
       let markupFilms = '';
       if (this.filmName) {
+        if(this.filmName?.length < 2) {
+            // refs.cardSetEl.innerHTML = '';
+            return;
+        }
         const foundMovies = movies.filter(movie =>
           movie.title.toLowerCase().includes(this.filmName)
         );
+        
         markupFilms = renderMovies(foundMovies);
       } else {
         markupFilms = renderMovies(movies);
