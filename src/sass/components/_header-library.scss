@@ -86,7 +86,8 @@
   border-radius: 100px;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.btn-top--active {
     background-color: var(--secondary-text-color);
     color: var(--btn-text-color);
   }
