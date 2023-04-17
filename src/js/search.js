@@ -4,7 +4,7 @@ import { refs } from './refs';
 import Notiflix from 'notiflix';
 import { renderMovies } from './render-cards';
 import { options } from './pagination-home';
-import {hideSpinner} from './spiner'
+import { hideSpinner } from './spiner';
 
 const exemplarFilms = new FilmRestAPI();
 
@@ -12,12 +12,12 @@ refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(e) {
   e.preventDefault();
-  
 
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
   if (!exemplarFilms.searchQuery) {
-    Notiflix.Notify.info('Please write something');
+    // Notiflix.Notify.info('Please write something');
+    refs.cardSetEl.innerHTML = '<li>Please write something</li>';
     return;
   }
 
@@ -25,6 +25,7 @@ async function onSearchFormSubmit(e) {
   try {
     const data = await exemplarFilms.searchMovies();
     if (data.results.length === 0) {
+      hideSpinner();
       Notiflix.Notify.failure(
         'Sorry, there are no films watching your search query. Please try again.'
       );
