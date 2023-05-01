@@ -7,13 +7,16 @@ body.spiner {
 
 .spiner-box {
   position: absolute;
+  top: 50%;
+      left: 50%;
 }
+.spinner--hidden {    display: none;
+        }
 
 .spiner {
   width: 100px;
   height: 100px;
   position: relative;
-  // display: none;
 }
 
 .spiner div {
@@ -24,8 +27,7 @@ body.spiner {
   border: 10px solid transparent;
   border-top-color: #B92F2C;
   border-radius: 50%;
-  top: 50px;
-  left: 50px;
+
   animation: spinerOne 1.2s linear infinite;
 }
 
