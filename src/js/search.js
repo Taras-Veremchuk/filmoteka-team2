@@ -16,8 +16,8 @@ async function onSearchFormSubmit(e) {
   exemplarFilms.searchQuery = e.currentTarget.elements.name.value.trim();
 
   if (!exemplarFilms.searchQuery) {
-    // Notiflix.Notify.info('Please write something');
-    refs.cardSetEl.innerHTML = '<li>Please write something</li>';
+    refs.cardSetEl.innerHTML =
+      '<li><img src="https://static.tildacdn.com/tild3432-3335-4337-b130-363866343062/No_results_1.svg" width="" height=""/></li>';
     return;
   }
 
